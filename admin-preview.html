@@ -7,13 +7,29 @@
   <title>Sutras V26 Inventory Admin Preview</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="commerce-preview.css">
+  <link rel="stylesheet" href="demo-nav.css?v=20260909-pages">
+  <script src="demo-nav.js?v=20260909-pages" defer></script>
 </head>
 <body>
+  <nav class="demo-nav" aria-label="Sutras demo navigation">
+    <div class="demo-nav__inner">
+      <span class="demo-nav__label">Sutras demo · simulated payments only</span>
+      <div class="demo-nav__links">
+        <a href="commerce-preview.html">Store</a>
+        <a href="checkout-preview.html">Checkout</a>
+        <a href="admin-preview.html">Admin</a>
+        <button type="button" data-reset-demo disabled title="Clear this demo's bag, inventory, orders and recently viewed items">Reset Demo</button>
+      </div>
+      <p class="demo-nav__status" role="status" aria-live="polite"></p>
+      <noscript>Enable JavaScript to use Reset Demo.</noscript>
+    </div>
+  </nav>
+
   <div class="lab-banner">V26 INVENTORY ADMIN · LOCAL TEST DATA ONLY · NO REAL PAYMENT · NOT A SECURE PRODUCTION ADMIN</div>
   <header class="site-head">
     <div class="wrap head-inner">
       <a class="wordmark" href="commerce-preview.html" aria-label="Back to commerce preview">sutras<span class="dot">.</span></a>
-      <nav class="head-actions"><a class="head-link" href="commerce-preview.html">Test store</a><a class="head-link" href="index.html">V25 website</a></nav>
+      <nav class="head-actions"><a class="head-link" href="commerce-preview.html">Test store</a><a class="head-link" href="index.html">Sutras storefront</a></nav>
     </div>
   </header>
 

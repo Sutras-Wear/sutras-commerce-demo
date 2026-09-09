@@ -1,0 +1,18 @@
+/* Shared demo controls; scoped so the storefront keeps its own layout. */
+.demo-nav { background: #eeece3; color: #30372e; border-bottom: 1px solid #d7d4ca; font: 12px/1.4 'DM Sans', sans-serif; }
+.demo-nav__inner { max-width: 1320px; margin: 0 auto; padding: 8px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 20px; }
+.demo-nav__label { font-size: 10px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; }
+.demo-nav__links { display: flex; flex-wrap: wrap; gap: 4px; }
+.demo-nav a, .demo-nav button { box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 12px; border: 1px solid transparent; border-radius: 3px; background: transparent; color: inherit; font: inherit; text-decoration: none; cursor: pointer; }
+.demo-nav a:hover, .demo-nav a[aria-current='page'] { background: #dfe3d6; }
+.demo-nav button { color: #88472f; border-color: #c7b2a5; }
+.demo-nav button:disabled { opacity: .5; cursor: default; }
+.demo-nav a:focus-visible, .demo-nav button:focus-visible { outline: 2px solid #45533f; outline-offset: 2px; }
+.demo-nav__status { flex-basis: 100%; margin: 0; color: #45533f; }
+.demo-nav__status:empty { display: none; }
+@media (max-width: 540px) {
+  .demo-nav__inner { padding: 8px 12px; gap: 6px; }
+  .demo-nav__label { width: 100%; text-align: center; }
+  .demo-nav__links { width: 100%; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .demo-nav a, .demo-nav button { padding: 8px 4px; font-size: 11px; }
+}

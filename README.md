@@ -1,3 +1,15 @@
+# Sutras commerce demo — GitHub Pages
+
+This repository is a test-only demo with simulated payments.
+
+- [Open the demo](https://sutras-wear.github.io/sutras-commerce-demo/)
+- [Store](commerce-preview.html) · [Checkout](checkout-preview.html) · [Admin](admin-preview.html)
+- Pages publishes from **main / (root)**, with no build step.
+- The demo bar includes Reset Demo, which clears only this demo’s five storage keys.
+- See [demo setup and reset details](GITHUB-PAGES-DEMO.md).
+
+The notes below describe the inherited storefront. Deployment changes apply only to sutras-commerce-demo.
+
 # V25 — Launch Readiness
 
 V25 adds a clear **How ordering works** journey, a confirmation/trust panel, mobile and footer access to it, a branded `404.html`, `robots.txt`, refreshed sitemap date, fuller social metadata, and launch checklists. It does not invent stock, prices, payment methods, delivery terms or return terms.
@@ -62,12 +74,12 @@ Every product has a clean modelled main view and its original-photo gallery. Pri
 - **There are no placeholder/concept product cards left in the collection.** All current entries have modelled main views and real source-photo galleries. The campaign and moodboard remain illustrative; the model-view explanation stays outside the pictures.
 - Price, size availability, exact measurements and stock must still be confirmed on WhatsApp. The folded bottoms have not been assigned an unverified cut such as churidar, palazzo or salwar.
 
-Website: **https://sutras-wear.github.io/Sutras-by-S3/**  
-Repository: **https://github.com/Sutras-Wear/Sutras-by-S3**
+Website: **https://sutras-wear.github.io/sutras-commerce-demo/**  
+Repository: **https://github.com/Sutras-Wear/sutras-commerce-demo**
 
 ## Initial GitHub Pages setup (if needed)
 
-Your repository: **https://github.com/Sutras-Wear/Sutras-by-S3**
+Your repository: **https://github.com/Sutras-Wear/sutras-commerce-demo**
 
 1. Download and extract **Sutras-Website.zip**. Open the extracted folder.
 2. Sign in to GitHub with an account that can write to `Sutras-Wear/Sutras-by-S3`.
@@ -78,7 +90,7 @@ Your repository: **https://github.com/Sutras-Wear/Sutras-by-S3**
 7. Under **Build and deployment**, choose **Deploy from a branch**. Select **main** and **/ (root)**, then **Save**.
 8. Wait for GitHub’s Pages deployment to finish. The Pages settings will show the published address. The intended address is:
 
-   **https://sutras-wear.github.io/Sutras-by-S3/**
+   **https://sutras-wear.github.io/sutras-commerce-demo/**
 
 The repository has been populated and GitHub Pages is serving the site. The steps above are retained for setup/reference. Updates pushed to the configured publishing branch are deployed by GitHub Pages. No access token belongs in website files or Git history.
 
@@ -248,7 +260,7 @@ Do not put private customer information, payment secrets or credentials in this 
 
 Open a product’s details and use **Copy link** or **Share on WhatsApp** below the enquiry button. WhatsApp sharing opens its recipient picker; it does not send a message automatically or replace the business enquiry buttons.
 
-Example: `https://sutras-wear.github.io/Sutras-by-S3/?product=dark-green-floral-two-piece-set`
+Example: `https://sutras-wear.github.io/sutras-commerce-demo/?product=dark-green-floral-two-piece-set`
 
 - The product ID is stable: shared links continue to show later photo/detail updates to that same product. Do not reuse a retired ID for a different item.
 - A valid link opens that exact product on arrival or reload. Unknown/retired IDs fall back to the collection with a helpful message.

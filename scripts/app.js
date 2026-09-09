@@ -6,7 +6,7 @@
   if (!config || !Array.isArray(config.products)) return;
   const products = config.products;
   const byId = new Map(products.map(product => [product.id, product]));
-  const commerce = window.SutrasCommerce || null;
+
   const checkoutPrefillKey = 'sutras-demo-v26-1-checkout-prefill-v1';
   const $ = (selector, scope = document) => scope.querySelector(selector);
   const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
@@ -63,7 +63,7 @@
   updateScrollState();
 
   // The file preview may be sandboxed without localStorage. Browsing and the
-  // current in-memory enquiry bag still work; storage is never mandatory.
+  // current in-memory shopping bag still work; storage is never mandatory.
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
     if (saved && Array.isArray(saved.items)) {
@@ -126,15 +126,6 @@
   loadRecentlyViewed();
   renderRecentlyViewed();
 
-  if (commerce) {
-    try {
-      commerce.ensureProducts(products);
-      commerce.cleanupExpiredReservations();
-    } catch (_) {
-      // The normal catalogue and enquiry bag must keep working even if the
-      // V26 browser-only commerce lab storage is unavailable.
-    }
-  }
 
   function priceText(product) {
     if (typeof product.price !== 'number' || !Number.isFinite(product.price) || product.isPreview) return 'Price on enquiry';
@@ -571,10 +562,10 @@
   function productShareUrl(product) {
     let url;
     try {
-      url = new URL($('link[rel="canonical"]')?.href || 'https://sutras-wear.github.io/sutras-commerce-demo/');
+      url = new URL($('link[rel="canonical"]')?.href || 'https://sutras-wear.github.io/Sutras-by-S3/');
       if (url.protocol !== 'https:') throw new Error('Public HTTPS URL required');
     } catch (_) {
-      url = new URL('https://sutras-wear.github.io/sutras-commerce-demo/');
+      url = new URL('https://sutras-wear.github.io/Sutras-by-S3/');
     }
     url.search = '';
     url.hash = '';
@@ -609,7 +600,7 @@
       <div class="product-share-fallback" id="product-share-fallback" hidden>
         <label for="product-share-url">Product link — select and copy</label>
         <input id="product-share-url" type="text" value="${escape(url)}" readonly spellcheck="false" aria-describedby="share-link-help">
-        <p id="share-link-help">This link opens this exact piece. It does not share your enquiry bag.</p>
+        <p id="share-link-help">This link opens this exact piece. It does not share your shopping bag.</p>
       </div>
     </section>`;
   }
@@ -770,7 +761,7 @@
           <div><span>PRICE</span><strong>${escape(priceText(product))}</strong></div>
         </div>
         <div class="quick-view-status">${availabilityStatusMarkup(product, 'quick-availability')}<span class="quick-view-set-contents">${escape(product.setContents || 'One garment')}</span></div>
-        ${isUnavailable(product) ? `<div class="detail-unavailable ${product.availability === 'sold-out' ? 'is-sold-out' : ''}" role="status"><strong>${escape(availabilityLabel(product))}</strong><span>This style can still be explored, but it cannot be added to the enquiry bag.</span></div>` : `
+        ${isUnavailable(product) ? `<div class="detail-unavailable ${product.availability === 'sold-out' ? 'is-sold-out' : ''}" role="status"><strong>${escape(availabilityLabel(product))}</strong><span>This style can still be explored, but it cannot be added to the shopping bag.</span></div>` : `
           <div class="quick-size-heading"><span>Your usual size</span><strong id="quick-selected-size">Selected · ${escape(quickViewSize)}</strong></div>
           <div class="quick-size-list" role="group" aria-label="Usual size preference">${sizes.map(size => `<button class="quick-size-option" type="button" data-quick-size="${escape(size)}" aria-pressed="${size === quickViewSize}">${escape(size)}</button>`).join('')}</div>
           <p class="quick-size-helper">A preference only — Sutras will confirm the actual garment fit.</p>
@@ -781,7 +772,7 @@
         </div>
         <a class="quick-view-whatsapp" id="quick-view-whatsapp" href="${escape(waLink(directMessage(product, quickViewSize)))}" target="_blank" rel="noopener noreferrer">Ask about this style on WhatsApp ↗</a>
         <div class="quick-view-confirmation" id="quick-view-confirmation" role="status" aria-live="polite" aria-atomic="true" hidden>
-          <span>${icon('check')} <strong>Added to your enquiry bag.</strong></span>
+          <span>${icon('check')} <strong>Added to your shopping bag.</strong></span>
           <button type="button" data-open-bag>View bag</button>
         </div>
       </div>
@@ -863,13 +854,13 @@
         <div class="size-list" role="group" aria-labelledby="size-label">${sizes.map(size => `<button class="size-option" type="button" data-size="${escape(size)}" aria-pressed="${size === selectedSize}">${escape(size)}</button>`).join('')}</div>
         <p class="size-helper">Not sure? We can help with the actual garment’s fit.</p>
         <div class="detail-price"><span>${escape(priceText(product))}</span>${availabilityStatusMarkup(product, 'detail-availability-status')}</div>
-        ${isUnavailable(product) ? `<div class="detail-unavailable ${product.availability === 'sold-out' ? 'is-sold-out' : ''}" role="status"><strong>${escape(availabilityLabel(product))}</strong><span>This style can still be viewed, but it cannot be added to the enquiry bag.</span></div>` : ''}
+        ${isUnavailable(product) ? `<div class="detail-unavailable ${product.availability === 'sold-out' ? 'is-sold-out' : ''}" role="status"><strong>${escape(availabilityLabel(product))}</strong><span>This style can still be viewed, but it cannot be added to the shopping bag.</span></div>` : ''}
         <div class="detail-action-stack">
-          ${isUnavailable(product) ? '' : `<button class="button button-green full-width detail-add-button" type="button" id="add-to-bag">${icon('bag')} Add to enquiry bag ${icon('arrow')}</button>`}
+          ${isUnavailable(product) ? '' : `<button class="button button-green full-width detail-add-button" type="button" id="add-to-bag">${icon('bag')} Add to shopping bag ${icon('arrow')}</button>`}
           <a class="detail-direct-enquiry detail-action-link" id="direct-enquiry" href="${escape(waLink(directMessage(product, selectedSize)))}" target="_blank" rel="noopener noreferrer">Or ask about this style on WhatsApp ↗</a>
         </div>
         <div class="bag-confirmation" id="bag-confirmation" role="status" aria-live="polite" aria-atomic="true" hidden>
-          <div class="bag-confirmation-message"><span class="bag-confirmation-check">${icon('check')}</span><span><strong>Added to your enquiry bag</strong><small>Your selection is saved. You can keep browsing.</small></span></div>
+          <div class="bag-confirmation-message"><span class="bag-confirmation-check">${icon('check')}</span><span><strong>Added to your shopping bag</strong><small>Your selection is saved. You can keep browsing.</small></span></div>
           <button class="bag-confirmation-action" type="button" data-open-bag>View bag</button>
         </div>
         ${shareControls(product)}
@@ -938,97 +929,30 @@
     }).format(Number(value) || 0).replace('ZMW', 'K').trim();
   }
 
-  function checkoutReadiness() {
-    if (!commerce) {
-      return { ready: false, total: 0, issues: ['Checkout engine is unavailable in this preview.'], items: [] };
-    }
-    let state;
-    try {
-      state = commerce.snapshot();
-    } catch (_) {
-      return { ready: false, total: 0, issues: ['Checkout storage is unavailable in this browser.'], items: [] };
-    }
-    const issues = [];
-    const items = bag.map(item => {
-      const product = byId.get(item.id);
-      const inventory = state.products[item.id];
-      const available = inventory ? commerce.availableStock(item.id, state) : 0;
-      const enabled = Boolean(inventory?.enabled && typeof inventory.price === 'number');
-      if (!product) issues.push('A selected style is no longer in the catalogue.');
-      else if (isUnavailable(product)) issues.push(`${product.cardName || product.name} is currently unavailable.`);
-      else if (!enabled) issues.push(`${product.cardName || product.name} is not configured for checkout yet.`);
-      else if (item.quantity > available) issues.push(`${product.cardName || product.name} only has ${available} available in the checkout test.`);
-      return {
-        productId: item.id,
-        quantity: item.quantity,
-        size: item.size,
-        price: enabled ? inventory.price : null,
-        available
-      };
-    });
-    const total = items.reduce((sum, item) => sum + (typeof item.price === 'number' ? item.price * item.quantity : 0), 0);
-    return { ready: Boolean(items.length) && issues.length === 0, total, issues, items };
-  }
-
   function updateCheckoutActions() {
-    const status = checkoutReadiness();
-    const total = $('#bag-checkout-total');
-    const message = $('#bag-checkout-status');
-    const desktopButton = $('#bag-checkout');
-    const mobileButton = $('#bag-checkout-mobile');
-    const stickySummary = $('#bag-sticky-summary');
-    const stickySubline = $('#bag-sticky-subline');
-
-    if (!bag.length) return status;
-
-    if (status.ready) {
-      if (total) total.textContent = `Test total · ${checkoutMoney(status.total)}`;
-      if (message) message.textContent = 'Ready for the V26 simulated checkout. Stock will be reserved before the payment test.';
-      if (stickySummary) stickySummary.textContent = `${checkoutMoney(status.total)} · ${bagTotals().units} item${bagTotals().units === 1 ? '' : 's'}`;
-      if (stickySubline) stickySubline.textContent = 'Ready for test checkout.';
-    } else {
-      if (total) total.textContent = 'Checkout setup required';
-      const issue = status.issues[0] || 'Checkout is not ready for this selection.';
-      if (message) message.textContent = status.issues.length > 1 ? `${issue} + ${status.issues.length - 1} more selection${status.issues.length === 2 ? '' : 's'} need attention.` : issue;
-      if (stickySummary) stickySummary.textContent = `${bagTotals().units} item${bagTotals().units === 1 ? '' : 's'} in your bag`;
-      if (stickySubline) stickySubline.textContent = 'Checkout is not ready for every selection yet.';
-    }
-
-    [desktopButton, mobileButton].forEach(button => {
-      if (!button) return;
-      button.classList.toggle('is-disabled', !status.ready);
-      button.setAttribute('aria-disabled', String(!status.ready));
-      button.title = status.ready ? 'Continue to the V26 simulated checkout' : (status.issues[0] || 'Checkout is not ready yet');
-      if (status.ready) button.href = 'checkout-preview.html?source=enquiry-bag';
+    const ready = bag.length > 0 && storageAvailable;
+    const count = bagTotals().units;
+    $('#bag-checkout-total').textContent = 'Prices to be confirmed';
+    $('#bag-checkout-status').textContent = storageAvailable
+      ? 'Review your selection at checkout. Online payment is coming soon.'
+      : 'Your browser cannot save this bag. You can still ask for help on WhatsApp.';
+    $('#bag-sticky-summary').textContent = `${count} item${count === 1 ? '' : 's'} in your bag`;
+    $('#bag-sticky-subline').textContent = 'Online payment coming soon.';
+    [$('#bag-checkout'), $('#bag-checkout-mobile')].forEach(button => {
+      button.classList.toggle('is-disabled', !ready);
+      button.setAttribute('aria-disabled', String(!ready));
+      button.title = ready ? 'Review your selection at checkout' : 'Add a piece to your bag to continue';
+      if (ready) button.href = 'checkout.html';
       else button.removeAttribute('href');
     });
-    return status;
+    return {ready};
   }
 
   function proceedToCheckout(event) {
-    const status = checkoutReadiness();
-    if (!status.ready || !commerce) {
+    saveBag();
+    if (!updateCheckoutActions().ready) {
       event?.preventDefault();
-      showToast(status.issues[0] || 'Checkout is not ready for this selection yet.');
-      updateCheckoutActions();
-      return;
-    }
-    try {
-      commerce.saveCart(status.items.map(item => ({
-        productId: item.productId,
-        quantity: item.quantity,
-        size: item.size
-      })));
-      localStorage.setItem(checkoutPrefillKey, JSON.stringify({
-        source: 'enquiry-bag',
-        note: orderNote.slice(0, 500),
-        createdAt: new Date().toISOString()
-      }));
-      // The checkout controls are real links. The browser performs the page
-      // navigation after this handler has safely synchronized the bag.
-    } catch (_) {
-      event?.preventDefault();
-      showToast('Checkout could not open in this browser. Your enquiry bag is still safe.');
+      showToast('Your bag could not be saved. Please use WhatsApp for help.');
     }
   }
 
@@ -1048,7 +972,7 @@
       }),
       '',
       ...(orderNote.trim() ? [`My note: ${orderNote.trim()}`, ''] : []),
-      'Please also confirm delivery or collection options in Lusaka/Zambia and payment details. This is an enquiry, not a confirmed order. Thank you!'
+      'Please help me with availability, sizing and delivery or collection options. This is a support enquiry, not an order. Thank you!'
     ];
     return lines.join('\n');
   }
@@ -1070,7 +994,7 @@
   function renderBag() {
     const { units: count, selections } = bagTotals();
     $$('[data-bag-count]').forEach(element => element.textContent = count);
-    $$('button.bag-button').forEach(button => button.setAttribute('aria-label', `Open your enquiry bag, ${count} item${count === 1 ? '' : 's'}`));
+    $$('button.bag-button').forEach(button => button.setAttribute('aria-label', `Open your shopping bag, ${count} item${count === 1 ? '' : 's'}`));
     $('#bag-footer').hidden = !bag.length;
     $('#order-note').value = orderNote;
     $('#bag-unit-count').textContent = `${count} item${count === 1 ? '' : 's'}`;
@@ -1079,6 +1003,7 @@
     if (!bag.length) {
       $('#bag-items').innerHTML = `<div class="empty-bag">${icon('bag')}<h3>A little room for lovely things.</h3><p>Explore the collection and add the pieces or inspiration you love. We’ll confirm actual availability with you.</p><button class="button button-rust" type="button" data-browse-styles>Explore the collection ${icon('arrow')}</button></div>`;
       $('#bag-sticky-action').hidden = true;
+      updateCheckoutActions();
       return;
     }
     $('#bag-sticky-action').hidden = false;
@@ -1101,7 +1026,7 @@
       </article>`;
     }).join('') + '<button class="clear-bag" type="button" data-clear-bag>Clear entire bag</button>';
     $('#bag-summary').textContent = `${count} requested item${count === 1 ? '' : 's'} · ${selections} selection${selections === 1 ? '' : 's'}`;
-    $('.bag-disclaimer').textContent = `V26 checkout is simulated for testing; no real money can be charged.${bag.some(item => byId.get(item.id).isPreview) ? ' Preview styles are not confirmed stock.' : ''}${bag.some(item => primaryImageKind(byId.get(item.id)) === 'ai-model') ? ' AI-modelled views illustrate styling; actual fit may differ.' : ''}${storageAvailable ? '' : ' This preview cannot save your bag between visits.'} Need help? WhatsApp stays available for questions.`;
+    $('.bag-disclaimer').textContent = `Online payment is coming soon. No order is placed or charged here.${bag.some(item => byId.get(item.id).isPreview) ? ' Preview styles are not confirmed stock.' : ''}${bag.some(item => primaryImageKind(byId.get(item.id)) === 'ai-model') ? ' AI-modelled views illustrate styling; actual fit may differ.' : ''}${storageAvailable ? '' : ' This browser cannot save your bag between visits.'} Need help? Ask us on WhatsApp.`;
     updateWhatsAppLinks();
     updateCheckoutActions();
   }
@@ -1176,11 +1101,7 @@
 
   // Keep separate tabs in step without sending anything to a server.
   window.addEventListener('storage', event => {
-    if (event.key === commerce?.STORAGE_KEY) {
-      if (bag.length) updateCheckoutActions();
-      return;
-    }
-    if (event.key !== storageKey) return;
+    if (event.key !== storageKey && event.key !== null) return;
     try {
       const saved = JSON.parse(event.newValue || 'null');
       bag = saved && Array.isArray(saved.items) ? saved.items.slice(0, maxSelections).filter(item => item && byId.has(item.id) && sizes.includes(item.size) && Number.isInteger(item.quantity) && item.quantity >= 1 && item.quantity <= maxQuantity) : [];

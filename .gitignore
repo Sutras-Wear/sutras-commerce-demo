@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.zip
+Sutras-preview.html
+node_modules/
+__pycache__/
+.cache/
+.env
+.env.*
+!.env.example

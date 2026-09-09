@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Sutras V26 Test Checkout</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="commerce-preview.css">
+</head>
+<body>
+  <div class="lab-banner">V26 TEST CHECKOUT · SIMULATED PAYMENT ONLY · NO MONEY CAN BE CHARGED</div>
+  <header class="site-head"><div class="wrap head-inner"><a class="wordmark" id="checkout-wordmark" href="commerce-preview.html">sutras<span class="dot">.</span></a><nav class="head-actions"><a class="head-link" id="checkout-back-link" href="commerce-preview.html">Back to bag</a><a class="head-link" href="admin-preview.html">Inventory Admin</a></nav></div></header>
+
+  <main class="wrap checkout-main">
+    <p class="eyebrow">V26 · CHECKOUT ENGINE</p>
+    <h1>Test the <em>purchase flow.</em></h1>
+    <p class="checkout-intro">This page demonstrates the exact stock logic we want later: checkout reserves units first, successful payment permanently reduces stock, and failed/cancelled payment releases the reservation.</p>
+    <div class="checkout-layout">
+      <section>
+        <form id="checkout-form" class="checkout-form">
+          <div class="field-grid">
+            <div class="field"><label for="customer-name">Customer name</label><input id="customer-name" name="name" autocomplete="name" required value="Test Customer"></div>
+            <div class="field"><label for="customer-phone">Phone</label><input id="customer-phone" name="phone" inputmode="tel" autocomplete="tel" required value="0970000000"></div>
+            <div class="field"><label for="fulfilment">Fulfilment</label><select id="fulfilment" name="fulfilment"><option>Collection</option><option>Delivery</option></select></div>
+            <div class="field"><label for="location">Area / location</label><input id="location" name="location" placeholder="e.g. Kabulonga"></div>
+            <div class="field full"><label for="order-note">Order note</label><textarea id="order-note" name="note" placeholder="Sizing or delivery note"></textarea></div>
+          </div>
+          <button id="reserve-button" class="primary-button" type="submit" style="width:100%;margin-top:18px">Reserve stock & continue to test payment</button>
+          <p class="cart-disclaimer">The customer details above are test-only and remain in this browser. A real checkout will require a privacy policy, secure server transport and a verified payment provider.</p>
+        </form>
+        <div id="checkout-result"></div>
+        <a class="back-link" id="checkout-return-link" href="commerce-preview.html">← Return to test store</a>
+      </section>
+
+      <aside class="checkout-summary" aria-labelledby="summary-title">
+        <div class="summary-head"><p class="eyebrow">ORDER</p><h2 id="summary-title">Your test <em>summary.</em></h2></div>
+        <div class="summary-items" id="summary-items"></div>
+        <div class="cart-footer"><div class="total-row"><span>Total</span><strong id="summary-total">K0</strong></div><p class="reservation-status" id="reservation-status">No stock is reserved yet.</p></div>
+        <div class="payment-sim" id="payment-sim" hidden>
+          <h3>Payment simulator</h3>
+          <p>These buttons imitate what a real verified payment webhook would tell our backend. They do not connect to a payment company.</p>
+          <div class="sim-buttons"><button class="success" id="simulate-success" type="button">Simulate successful payment</button><button class="fail" id="simulate-fail" type="button">Simulate failed / cancelled payment</button></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="scripts/catalog.js"></script>
+  <script src="scripts/commerce-core.js"></script>
+  <script src="scripts/commerce-checkout.js"></script>
+</body>
+</html>

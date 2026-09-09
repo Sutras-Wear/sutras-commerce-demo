@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sutras-wear.github.io/Sutras-by-S3/sitemap.xml

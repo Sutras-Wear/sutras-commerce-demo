@@ -571,10 +571,10 @@
   function productShareUrl(product) {
     let url;
     try {
-      url = new URL($('link[rel="canonical"]')?.href || 'https://sutras-wear.github.io/Sutras-by-S3/');
+      url = new URL($('link[rel="canonical"]')?.href || 'https://sutras-wear.github.io/sutras-commerce-demo/');
       if (url.protocol !== 'https:') throw new Error('Public HTTPS URL required');
     } catch (_) {
-      url = new URL('https://sutras-wear.github.io/Sutras-by-S3/');
+      url = new URL('https://sutras-wear.github.io/sutras-commerce-demo/');
     }
     url.search = '';
     url.hash = '';

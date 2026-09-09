@@ -32,7 +32,7 @@
   function storage() {
     try {
       if (typeof localStorage !== 'undefined') {
-        const key = '__sutras_test__';
+        const key = 'sutras-demo-v26-1-storage-probe';
         localStorage.setItem(key, '1');
         localStorage.removeItem(key);
         return localStorage;

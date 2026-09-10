@@ -7,21 +7,23 @@
   <title>Checkout · Sutras by S³</title>
   <meta name="description" content="Review your Sutras shopping bag and get help with your selection.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="checkout.css?v=27">
-  <script src="scripts/catalog.js?v=27" defer></script>
-  <script src="scripts/checkout.js?v=27" defer></script>
+  <link rel="stylesheet" href="checkout.css?v=28">
+  <script src="scripts/catalog.js?v=28" defer></script>
+  <script src="scripts/supabase-config.js?v=28" defer></script>
+  <script src="scripts/inventory.js?v=28" defer></script>
+  <script src="scripts/checkout.js?v=28" defer></script>
 </head>
 <body>
   <header class="site-head"><div class="wrap head-inner"><a class="wordmark" href="index.html" aria-label="Sutras home">sutras<span class="dot">.</span></a><nav class="head-actions" aria-label="Checkout navigation"><a class="head-link" href="index.html?bag=open">Back to shopping bag</a></nav></div></header>
   <main class="wrap checkout-main">
     <p class="eyebrow">YOUR EVERYDAY EDIT</p>
     <h1>A little closer to <em>yours.</em></h1>
-    <p class="checkout-intro">Review your selection. Online payment is coming soon; your bag stays saved for you.</p>
+    <p class="checkout-intro">Review your selection. Online payment is coming soon; your bag stays saved in this browser when storage is available.</p>
     <div class="checkout-layout">
       <section aria-labelledby="checkout-title">
         <div class="checkout-form">
           <p class="eyebrow">CHECKOUT</p><h2 id="checkout-title">The finishing <em>details.</em></h2>
-          <p>Prices, available sizes and delivery or collection details will be confirmed by Sutras before you order.</p>
+          <p>Review current prices and availability below. Delivery or collection details will be confirmed before you order.</p>
           <div class="result-box" role="status"><strong>Online payment coming soon</strong><p>We’re getting everything ready. No payment is taken, no stock is reserved and no order is placed on this website.</p></div>
           <button class="primary-button" type="button" disabled aria-describedby="payment-note">Payment unavailable</button>
           <p id="payment-note" class="cart-disclaimer">You don’t need to enter personal or payment details here.</p>
@@ -37,7 +39,7 @@
       <aside class="checkout-summary" aria-labelledby="summary-title">
         <div class="summary-head"><p class="eyebrow">SHOPPING BAG</p><h2 id="summary-title">Your <em>selection.</em></h2></div>
         <div class="summary-items" id="summary-items" aria-live="polite"><p>Loading your bag…</p></div>
-        <div class="cart-footer"><div class="total-row"><span>Subtotal</span><strong>To be confirmed</strong></div><p>Delivery or collection: to be confirmed</p><p class="reservation-status" id="selection-status">Prices and availability are confirmed before ordering.</p><p id="selection-note" class="selection-note" hidden></p></div>
+        <div class="cart-footer"><div class="total-row"><span>Subtotal</span><strong id="checkout-subtotal">To be confirmed</strong></div><p>Delivery or collection: to be confirmed</p><p class="reservation-status" id="selection-status">Prices and availability are confirmed before ordering.</p><p id="selection-note" class="selection-note" hidden></p></div>
       </aside>
     </div>
     <noscript><p>Turn on JavaScript to review your saved bag, or contact Sutras on WhatsApp for help.</p></noscript>

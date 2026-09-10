@@ -7,7 +7,6 @@
   const products = config.products;
   const byId = new Map(products.map(product => [product.id, product]));
 
-  const checkoutPrefillKey = 'sutras-demo-v26-1-checkout-prefill-v1';
   const $ = (selector, scope = document) => scope.querySelector(selector);
   const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
   const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -127,6 +126,18 @@
   renderRecentlyViewed();
 
 
+  function productSizes(product) {
+    return product.inventory?.sizes.length ? ['Not sure', ...product.inventory.sizes] : sizes;
+  }
+  function selectionIssue(item) {
+    const p=byId.get(item.id), inv=p?.inventory;
+    if(isUnavailable(p)) return `${p.cardName || p.name} is currently unavailable. Please review your bag.`;
+    if(inv?.sizes.length && item.size!=='Not sure' && !inv.sizes.includes(item.size))return `${item.size} is no longer available for ${p.cardName || p.name}. Please choose another size.`;
+    const total=bag.filter(i=>i.id===item.id).reduce((n,i)=>n+i.quantity,0);
+    if(inv?.availability==='available' && total>inv.available_quantity)return `Only ${inv.available_quantity} of ${p.cardName || p.name} are currently available. Please adjust your bag.`;
+    return '';
+  }
+
   function priceText(product) {
     if (typeof product.price !== 'number' || !Number.isFinite(product.price) || product.isPreview) return 'Price on enquiry';
     return new Intl.NumberFormat('en-ZM', { style: 'currency', currency: config.currency || 'ZMW', maximumFractionDigits: 2 }).format(product.price);
@@ -136,8 +147,8 @@
     if (product.isPreview) return 'Style preview';
     if (product.availability === 'sold-out') return 'Sold out';
     if (product.availability === 'unavailable') return 'Currently unavailable';
-    if (product.availability === 'low') return 'Low availability';
-    if (product.availability === 'available') return 'Available';
+    if (product.availability === 'low') return `Low stock · ${product.inventory.available_quantity} available`;
+    if (product.availability === 'available') return product.inventory ? `Available · ${product.inventory.available_quantity}` : 'Availability to confirm';
     return 'Availability to confirm';
   }
 
@@ -151,7 +162,7 @@
 
   function availabilityStatusMarkup(product, extraClass = '') {
     const className = `availability-status ${availabilityTone(product)}${extraClass ? ` ${extraClass}` : ''}`;
-    return `<span class="${className}" role="status"><span class="availability-dot" aria-hidden="true"></span><span>${escape(availabilityLabel(product))}</span></span>`;
+    return `<span class="${className}" data-inventory-product="${escape(product.id)}" role="status"><span class="availability-dot" aria-hidden="true"></span><span>${escape(availabilityLabel(product))}</span></span>`;
   }
 
   function isUnavailable(product) {
@@ -763,7 +774,7 @@
         <div class="quick-view-status">${availabilityStatusMarkup(product, 'quick-availability')}<span class="quick-view-set-contents">${escape(product.setContents || 'One garment')}</span></div>
         ${isUnavailable(product) ? `<div class="detail-unavailable ${product.availability === 'sold-out' ? 'is-sold-out' : ''}" role="status"><strong>${escape(availabilityLabel(product))}</strong><span>This style can still be explored, but it cannot be added to the shopping bag.</span></div>` : `
           <div class="quick-size-heading"><span>Your usual size</span><strong id="quick-selected-size">Selected · ${escape(quickViewSize)}</strong></div>
-          <div class="quick-size-list" role="group" aria-label="Usual size preference">${sizes.map(size => `<button class="quick-size-option" type="button" data-quick-size="${escape(size)}" aria-pressed="${size === quickViewSize}">${escape(size)}</button>`).join('')}</div>
+          <div class="quick-size-list" role="group" aria-label="Usual size preference">${productSizes(product).map(size => `<button class="quick-size-option" type="button" data-quick-size="${escape(size)}" aria-pressed="${size === quickViewSize}">${escape(size)}</button>`).join('')}</div>
           <p class="quick-size-helper">A preference only — Sutras will confirm the actual garment fit.</p>
         `}
         <div class="quick-view-actions">
@@ -851,7 +862,7 @@
         </div>
         ${product.isPreview ? '<p class="preview-notice"><strong>A little inspiration, not a stock listing.</strong>This AI-generated image and style name are placeholders. Ask us about similar real pieces, prices and availability.</p>' : `<p class="preview-notice ${primaryImageKind(product) === 'ai-model' ? 'ai-model-notice' : 'real-photo-notice'}"><strong>${primaryImageKind(product) === 'ai-model' ? 'About the modelled view.' : 'Photographed by Sutras.'}</strong>${escape(product.photoNote || 'Actual product photograph. Please confirm the price, sizing and availability with us.')}</p>`}
         <div class="detail-size-heading"><p class="detail-size-label" id="size-label">Your usual size <span>— a preference, not confirmed availability</span></p><span class="selected-size-pill" id="selected-size-value">Selected · ${escape(selectedSize)}</span></div>
-        <div class="size-list" role="group" aria-labelledby="size-label">${sizes.map(size => `<button class="size-option" type="button" data-size="${escape(size)}" aria-pressed="${size === selectedSize}">${escape(size)}</button>`).join('')}</div>
+        <div class="size-list" role="group" aria-labelledby="size-label">${productSizes(product).map(size => `<button class="size-option" type="button" data-size="${escape(size)}" aria-pressed="${size === selectedSize}">${escape(size)}</button>`).join('')}</div>
         <p class="size-helper">Not sure? We can help with the actual garment’s fit.</p>
         <div class="detail-price"><span>${escape(priceText(product))}</span>${availabilityStatusMarkup(product, 'detail-availability-status')}</div>
         ${isUnavailable(product) ? `<div class="detail-unavailable ${product.availability === 'sold-out' ? 'is-sold-out' : ''}" role="status"><strong>${escape(availabilityLabel(product))}</strong><span>This style can still be viewed, but it cannot be added to the shopping bag.</span></div>` : ''}
@@ -900,7 +911,11 @@
 
   function addToBag(id, size, { confirmation = 'product', trigger = null } = {}) {
     const product = byId.get(id);
-    if (!product || isUnavailable(product) || !sizes.includes(size)) return;
+    if (!product || isUnavailable(product) || !productSizes(product).includes(size)) return;
+    const already = bag.filter(i => i.id === id).reduce((sum,i) => sum+i.quantity,0);
+    if (product.inventory?.availability === 'available' && already >= product.inventory.available_quantity) {
+      showToast('Your bag has the currently available quantity for this style.'); return false;
+    }
     const existing = bag.find(item => item.id === id && item.size === size);
     if (!existing && bag.length >= maxSelections) {
       showToast('Your bag has 50 selections. Please remove one or message us to discuss more.');
@@ -932,12 +947,17 @@
   function updateCheckoutActions() {
     const ready = bag.length > 0 && storageAvailable;
     const count = bagTotals().units;
-    $('#bag-checkout-total').textContent = 'Prices to be confirmed';
+    const total = bag.every(i => Number.isFinite(byId.get(i.id)?.price)) ? bag.reduce((n,i)=>n+byId.get(i.id).price*i.quantity,0) : null;
+    $('#bag-checkout-total').textContent = total===null ? 'Prices to be confirmed' : checkoutMoney(total);
     $('#bag-checkout-status').textContent = storageAvailable
       ? 'Review your selection at checkout. Online payment is coming soon.'
       : 'Your browser cannot save this bag. You can still ask for help on WhatsApp.';
     $('#bag-sticky-summary').textContent = `${count} item${count === 1 ? '' : 's'} in your bag`;
     $('#bag-sticky-subline').textContent = 'Online payment coming soon.';
+    const issue = bag.map(i => selectionIssue(i)).find(Boolean);
+    if (issue) $('#bag-checkout-status').textContent = issue;
+    else if (['offline','unconfigured'].includes(window.SutrasInventory?.status)) $('#bag-checkout-status').textContent = 'Current prices and availability could not be confirmed. You can review your bag or ask for help.';
+
     [$('#bag-checkout'), $('#bag-checkout-mobile')].forEach(button => {
       button.classList.toggle('is-disabled', !ready);
       button.setAttribute('aria-disabled', String(!ready));
@@ -1009,7 +1029,7 @@
     $('#bag-sticky-action').hidden = false;
     $('#bag-items').innerHTML = bag.map((item, index) => {
       const product = byId.get(item.id);
-      const sizeOptions = sizes.map(size => `<option value="${escape(size)}" ${item.size === size ? 'selected' : ''}>${escape(size)}</option>`).join('');
+      const sizeOptions = [...new Set([...productSizes(product), item.size])].map(size => `<option value="${escape(size)}" ${item.size === size ? 'selected' : ''}>${escape(size)}</option>`).join('');
       return `<article class="bag-item" data-bag-index="${index}">
         <button class="bag-item-image" type="button" data-product="${escape(product.id)}" aria-label="View ${escape(product.name)}">
           <img src="${escape(product.image)}" alt="${escape(product.imageAlt)}" width="79" height="106" loading="lazy" decoding="async">
@@ -1064,6 +1084,10 @@
       const index = Number(quantityButton.dataset.quantity);
       const change = Number(quantityButton.dataset.change);
       if (!bag[index]) return;
+      const inv=byId.get(bag[index].id)?.inventory;
+      const totalForProduct=bag.filter(i=>i.id===bag[index].id).reduce((n,i)=>n+i.quantity,0);
+      if(change>0 && inv?.availability==='available' && totalForProduct>=inv.available_quantity){showToast('Your bag has the currently available quantity for this style.');return;}
+
       bag[index].quantity = Math.min(maxQuantity, Math.max(1, bag[index].quantity + change));
       saveBag();
       renderBag();
@@ -1151,4 +1175,40 @@
   } else if (productQuery() !== null) {
     openProductFromAddress(true);
   }
+
+  window.addEventListener('sutras:inventory', () => {
+    const focused=document.activeElement;
+    const focusId=focused?.id;
+    const sizeFocus=focused?.getAttribute('data-size');
+    const quickSizeFocus=focused?.getAttribute('data-quick-size');
+    const focusData=['data-product','data-quick-view','data-bag-size','data-quantity','data-change','data-remove'].filter(a=>focused?.hasAttribute(a)).map(a=>`[${a}="${CSS.escape(focused.getAttribute(a))}"]`).join('');
+    const noteFocused=focused?.id==='order-note';
+    const selection=noteFocused ? [focused.selectionStart,focused.selectionEnd] : null;
+    const dialogs=$$('dialog[open]').map(d=>[d,d.scrollTop]);
+    renderProducts();renderRecentlyViewed();
+    if($('#search-dialog').open)renderSearch();
+    if($('#product-dialog').open && activeProduct){
+      const size=selectedSize,photo=selectedPhotoIndex;
+      openProduct(activeProduct.id,{fromAddress:true});
+      selectedSize=productSizes(activeProduct).includes(size)?size:'Not sure';
+      $$('.size-option').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.size===selectedSize)));
+      $('#selected-size-value').textContent=`Selected · ${selectedSize}`;
+      $('#direct-enquiry').href=waLink(directMessage(activeProduct,selectedSize));
+      selectPhoto(photo);
+    }
+    if($('#quick-view-dialog').open && quickViewProduct){
+      const size=quickViewSize;
+      quickViewSize=productSizes(quickViewProduct).includes(size)?size:'Not sure';
+      $('#quick-view-detail').innerHTML=quickViewMarkup(quickViewProduct);
+    }
+    renderBag();
+    const target=focusId?document.getElementById(focusId):sizeFocus?$(`[data-size="${sizeFocus}"]`):quickSizeFocus?$(`[data-quick-size="${quickSizeFocus}"]`):focusData?$(focusData):null;
+    target?.focus({preventScroll:true});
+    if(noteFocused && selection)target?.setSelectionRange(...selection);
+    dialogs.forEach(([d,top])=>d.scrollTop=top);
+    if(window.__sutrasFinderMatches){
+      $('#product-grid').classList.add('finder-spotlight-active');
+      $$('.product-card').forEach(card=>{const id=card.querySelector('[data-product]')?.dataset.product;const n=window.__sutrasFinderMatches.indexOf(id);card.classList.toggle('finder-match',n>=0);card.classList.toggle('finder-not-match',n<0);card.dataset.finderRank=n>=0?String(n+1):'';});
+    }
+  });
 })();

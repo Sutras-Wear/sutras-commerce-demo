@@ -7,26 +7,42 @@
   <title>Checkout · Sutras by S³</title>
   <meta name="description" content="Review your Sutras shopping bag and get help with your selection.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="checkout.css?v=28">
-  <script src="scripts/catalog.js?v=28" defer></script>
-  <script src="scripts/supabase-config.js?v=28" defer></script>
-  <script src="scripts/inventory.js?v=28" defer></script>
-  <script src="scripts/checkout.js?v=28" defer></script>
+  <link rel="stylesheet" href="checkout.css?v=29">
+  <script src="scripts/catalog.js?v=29" defer></script>
+  <script src="scripts/supabase-config.js?v=29" defer></script>
+  <script src="scripts/inventory.js?v=29" defer></script>
+  <script src="scripts/orders.js?v=29" defer></script>
+  <script src="scripts/checkout.js?v=29" defer></script>
 </head>
 <body>
   <header class="site-head"><div class="wrap head-inner"><a class="wordmark" href="index.html" aria-label="Sutras home">sutras<span class="dot">.</span></a><nav class="head-actions" aria-label="Checkout navigation"><a class="head-link" href="index.html?bag=open">Back to shopping bag</a></nav></div></header>
   <main class="wrap checkout-main">
     <p class="eyebrow">YOUR EVERYDAY EDIT</p>
     <h1>A little closer to <em>yours.</em></h1>
-    <p class="checkout-intro">Review your selection. Online payment is coming soon; your bag stays saved in this browser when storage is available.</p>
+    <p class="checkout-intro">Review your selection and details. Eligible pieces can be held for 15 minutes when you place an order. Online payment is coming soon.</p>
     <div class="checkout-layout">
       <section aria-labelledby="checkout-title">
         <div class="checkout-form">
           <p class="eyebrow">CHECKOUT</p><h2 id="checkout-title">The finishing <em>details.</em></h2>
-          <p>Review current prices and availability below. Delivery or collection details will be confirmed before you order.</p>
-          <div class="result-box" role="status"><strong>Online payment coming soon</strong><p>We’re getting everything ready. No payment is taken, no stock is reserved and no order is placed on this website.</p></div>
+          <p>Only pieces with confirmed prices, sizes and stock can be ordered. Delivery charges are confirmed separately.</p>
+          <form id="order-form">
+            <div class="field-grid">
+              <div class="field full"><label for="full-name">Full name</label><input id="full-name" name="full_name" autocomplete="name" required minlength="2" maxlength="100"></div>
+              <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="25" pattern="[+0-9\s\-\(\)]{9,25}"></div>
+              <div class="field"><label for="email">Email (optional)</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254"></div>
+              <div class="field full"><label for="fulfilment">Delivery or collection</label><select id="fulfilment" name="fulfilment"><option value="collection">Collection in Lusaka</option><option value="delivery">Delivery</option></select></div>
+              <div class="field full" id="delivery-field" hidden><label for="delivery-details">Delivery address and directions</label><textarea id="delivery-details" name="delivery_details" autocomplete="street-address" minlength="10" maxlength="1000" disabled></textarea></div>
+              <div class="field full"><label for="customer-note">Your note (optional)</label><textarea id="customer-note" name="customer_note" maxlength="500"></textarea></div>
+            </div>
+            <p class="cart-disclaimer">Submitting sends your contact and fulfilment details to Sutras to manage your order. No payment details are requested.</p>
+            <p id="checkout-eligibility" role="status">Checking whether your pieces are ready to order…</p>
+            <button class="primary-button" id="place-order" type="submit" disabled>Place order &amp; hold stock</button>
+            <p id="order-error" role="alert" hidden></p>
+            <a id="recover-order" href="order.html" hidden>Check your previous submission before trying again</a>
+          </form>
+          <div class="result-box"><strong>Online payment coming in V30</strong><p>An order holds stock temporarily. It does not confirm payment. Unpaid holds expire automatically.</p></div>
           <button class="primary-button" type="button" disabled aria-describedby="payment-note">Payment unavailable</button>
-          <p id="payment-note" class="cart-disclaimer">You don’t need to enter personal or payment details here.</p>
+          <p id="payment-note" class="cart-disclaimer">No payment is collected on this website.</p>
           <hr>
           <h3>Need a hand with your selection?</h3>
           <p>Ask us about sizing, availability or delivery. Your WhatsApp message includes the pieces in your bag.</p>
@@ -39,7 +55,7 @@
       <aside class="checkout-summary" aria-labelledby="summary-title">
         <div class="summary-head"><p class="eyebrow">SHOPPING BAG</p><h2 id="summary-title">Your <em>selection.</em></h2></div>
         <div class="summary-items" id="summary-items" aria-live="polite"><p>Loading your bag…</p></div>
-        <div class="cart-footer"><div class="total-row"><span>Subtotal</span><strong id="checkout-subtotal">To be confirmed</strong></div><p>Delivery or collection: to be confirmed</p><p class="reservation-status" id="selection-status">Prices and availability are confirmed before ordering.</p><p id="selection-note" class="selection-note" hidden></p></div>
+        <div class="cart-footer"><div class="total-row"><span>Subtotal</span><strong id="checkout-subtotal">To be confirmed</strong></div><p>Delivery or collection: to be confirmed</p><p class="reservation-status" id="selection-status">Stock is only held after a successful order submission.</p><p id="selection-note" class="selection-note" hidden></p></div>
       </aside>
     </div>
     <noscript><p>Turn on JavaScript to review your saved bag, or contact Sutras on WhatsApp for help.</p></noscript>

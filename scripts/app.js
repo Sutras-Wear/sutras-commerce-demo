@@ -1046,7 +1046,7 @@
       </article>`;
     }).join('') + '<button class="clear-bag" type="button" data-clear-bag>Clear entire bag</button>';
     $('#bag-summary').textContent = `${count} requested item${count === 1 ? '' : 's'} · ${selections} selection${selections === 1 ? '' : 's'}`;
-    $('.bag-disclaimer').textContent = `Online payment is coming soon. No order is placed or charged here.${bag.some(item => byId.get(item.id).isPreview) ? ' Preview styles are not confirmed stock.' : ''}${bag.some(item => primaryImageKind(byId.get(item.id)) === 'ai-model') ? ' AI-modelled views illustrate styling; actual fit may differ.' : ''}${storageAvailable ? '' : ' This browser cannot save your bag between visits.'} Need help? Ask us on WhatsApp.`;
+    $('.bag-disclaimer').textContent = `Adding pieces to your bag does not place an order. Eligible pieces can be ordered at checkout with a temporary stock hold. Online payment is coming soon.${bag.some(item => byId.get(item.id).isPreview) ? ' Preview styles are not confirmed stock.' : ''}${bag.some(item => primaryImageKind(byId.get(item.id)) === 'ai-model') ? ' AI-modelled views illustrate styling; actual fit may differ.' : ''}${storageAvailable ? '' : ' This browser cannot save your bag between visits.'} Need help? Ask us on WhatsApp.`;
     updateWhatsAppLinks();
     updateCheckoutActions();
   }

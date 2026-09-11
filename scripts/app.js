@@ -944,35 +944,30 @@
     }).format(Number(value) || 0).replace('ZMW', 'K').trim();
   }
 
-  function updateCheckoutActions() {
-    const ready = bag.length > 0 && storageAvailable;
+  function updateEnquiryActions() {
+    const ready = bag.length > 0;
     const count = bagTotals().units;
     const total = bag.every(i => Number.isFinite(byId.get(i.id)?.price)) ? bag.reduce((n,i)=>n+byId.get(i.id).price*i.quantity,0) : null;
     $('#bag-checkout-total').textContent = total===null ? 'Prices to be confirmed' : checkoutMoney(total);
-    $('#bag-checkout-status').textContent = storageAvailable
-      ? 'Review your selection at checkout. Online payment is coming soon.'
-      : 'Your browser cannot save this bag. You can still ask for help on WhatsApp.';
-    $('#bag-sticky-summary').textContent = `${count} item${count === 1 ? '' : 's'} in your bag`;
-    $('#bag-sticky-subline').textContent = 'Online payment coming soon.';
     const issue = bag.map(i => selectionIssue(i)).find(Boolean);
-    if (issue) $('#bag-checkout-status').textContent = issue;
-    else if (['offline','unconfigured'].includes(window.SutrasInventory?.status)) $('#bag-checkout-status').textContent = 'Current prices and availability could not be confirmed. You can review your bag or ask for help.';
-
+    $('#bag-checkout-status').textContent = (issue ? issue + ' ' : '') + 'An enquiry, not a confirmed order. We’ll confirm prices, sizes and availability with you.' + (storageAvailable ? '' : ' Your bag is available for this visit only.');
+    $('#bag-sticky-summary').textContent = `${count} item${count === 1 ? '' : 's'} in your bag`;
+    $('#bag-sticky-subline').textContent = 'An enquiry, not a confirmed order.';
     [$('#bag-checkout'), $('#bag-checkout-mobile')].forEach(button => {
       button.classList.toggle('is-disabled', !ready);
       button.setAttribute('aria-disabled', String(!ready));
-      button.title = ready ? 'Review your selection at checkout' : 'Add a piece to your bag to continue';
-      if (ready) button.href = 'checkout.html';
+      button.title = ready ? 'Review and send your enquiry in WhatsApp' : 'Add a piece to your bag to enquire';
+      if (ready) button.href = waLink(enquiryMessage(), 0);
       else button.removeAttribute('href');
     });
     return {ready};
   }
 
-  function proceedToCheckout(event) {
+  function openEnquiry(event) {
     saveBag();
-    if (!updateCheckoutActions().ready) {
-      event?.preventDefault();
-      showToast('Your bag could not be saved. Please use WhatsApp for help.');
+    if (!updateEnquiryActions().ready) {
+      event.preventDefault();
+      showToast('Add a piece to your bag to enquire.');
     }
   }
 
@@ -992,7 +987,7 @@
       }),
       '',
       ...(orderNote.trim() ? [`My note: ${orderNote.trim()}`, ''] : []),
-      'Please help me with availability, sizing and delivery or collection options. This is a support enquiry, not an order. Thank you!'
+      'Please help me with availability, sizing and delivery or collection options. This is an enquiry, not a confirmed order. Thank you!'
     ];
     return lines.join('\n');
   }
@@ -1001,7 +996,8 @@
     const message = enquiryMessage();
     $('#bag-whatsapp').href = waLink(message, 0);
     $('#bag-whatsapp-alt').href = waLink(message, 1);
-    $('#bag-whatsapp-mobile').href = waLink(message, 0);
+    $('#bag-whatsapp-mobile').href = waLink(message, 1);
+    updateEnquiryActions();
   }
 
   function bagTotals() {
@@ -1023,7 +1019,7 @@
     if (!bag.length) {
       $('#bag-items').innerHTML = `<div class="empty-bag">${icon('bag')}<h3>A little room for lovely things.</h3><p>Explore the collection and add the pieces or inspiration you love. We’ll confirm actual availability with you.</p><button class="button button-rust" type="button" data-browse-styles>Explore the collection ${icon('arrow')}</button></div>`;
       $('#bag-sticky-action').hidden = true;
-      updateCheckoutActions();
+      updateEnquiryActions();
       return;
     }
     $('#bag-sticky-action').hidden = false;
@@ -1046,9 +1042,9 @@
       </article>`;
     }).join('') + '<button class="clear-bag" type="button" data-clear-bag>Clear entire bag</button>';
     $('#bag-summary').textContent = `${count} requested item${count === 1 ? '' : 's'} · ${selections} selection${selections === 1 ? '' : 's'}`;
-    $('.bag-disclaimer').textContent = `Adding pieces to your bag does not place an order. Eligible pieces can be ordered at checkout with a temporary stock hold. Online payment is coming soon.${bag.some(item => byId.get(item.id).isPreview) ? ' Preview styles are not confirmed stock.' : ''}${bag.some(item => primaryImageKind(byId.get(item.id)) === 'ai-model') ? ' AI-modelled views illustrate styling; actual fit may differ.' : ''}${storageAvailable ? '' : ' This browser cannot save your bag between visits.'} Need help? Ask us on WhatsApp.`;
+    $('.bag-disclaimer').textContent = `Your bag saves your favourites. Sending an enquiry is not a confirmed order. Website ordering is currently paused.${bag.some(item => byId.get(item.id).isPreview) ? ' Preview styles are not confirmed stock.' : ''}${bag.some(item => primaryImageKind(byId.get(item.id)) === 'ai-model') ? ' AI-modelled views illustrate styling; actual fit may differ.' : ''}${storageAvailable ? '' : ' This browser cannot save your bag between visits.'} Need help? Ask us on WhatsApp.`;
     updateWhatsAppLinks();
-    updateCheckoutActions();
+    updateEnquiryActions();
   }
 
   $('#bag-items').addEventListener('change', event => {
@@ -1120,8 +1116,8 @@
     updateWhatsAppLinks();
   });
 
-  $('#bag-checkout')?.addEventListener('click', proceedToCheckout);
-  $('#bag-checkout-mobile')?.addEventListener('click', proceedToCheckout);
+  $('#bag-checkout')?.addEventListener('click', openEnquiry);
+  $('#bag-checkout-mobile')?.addEventListener('click', openEnquiry);
 
   // Keep separate tabs in step without sending anything to a server.
   window.addEventListener('storage', event => {
@@ -1155,13 +1151,13 @@
     : 'AI model views illustrate styling. Please confirm actual garment details and sizes with us.';
   $('#stock-faq-answer').textContent = hasPreviewProducts
     ? 'AI model views illustrate styling, not exact garment fit. Items identified as “Style preview” are concepts, not confirmed stock. Please confirm actual pieces, prices and measurements on WhatsApp.'
-    : `${hasModelledProducts ? 'The collection is based on photographs supplied by Sutras. Product pages currently show the modelled view only, which illustrates styling rather than exact fit. ' : ''}Please confirm current availability, prices and garment measurements on WhatsApp before ordering.`;
+    : `${hasModelledProducts ? 'The collection is based on photographs supplied by Sutras. Product pages currently show the modelled view only, which illustrates styling rather than exact fit. ' : ''}Please confirm current availability, prices and garment measurements on WhatsApp with Sutras.`;
   const imageryNotes = [];
   if (hasModelledProducts) imageryNotes.push('AI model views are generated illustrations, not photographs of a model wearing the actual garment. Fit, length, drape and small details are approximate.');
   if (products.some(product => Array.isArray(product.gallery) && product.gallery.some(photo => photo && photo.kind === 'ai-detail'))) imageryNotes.push('Some product pages include AI-generated detail views based on the modelled garment, intended to show design details rather than replace confirmed product photography.');
   if (hasPreviewProducts) imageryNotes.push('Items identified as “Style preview” are concept examples, not confirmed stock.');
   if (config.imageryIsIllustrative) imageryNotes.push('The campaign and moodboard also use illustrative imagery.');
-  imageryNotes.push('Please confirm the real garment details before ordering.');
+  imageryNotes.push('Please confirm the real garment details with Sutras.');
   $('#imagery-info').textContent = imageryNotes.join(' ');
   $('#year').textContent = new Date().getFullYear();
   renderProducts();

@@ -1,6 +1,6 @@
 # Sutras by S³
 
-Official storefront codebase for **Sutras by S³**, a women’s clothing brand based in Lusaka, Zambia.
+Storefront codebase for **Sutras by S³**, a women’s clothing brand based in Lusaka, Zambia. This repository supports the current customer experience and the future official storefront launch.
 
 ## Current Status
 
@@ -20,13 +20,13 @@ Direct website ordering and online payments are intentionally disabled for now.
 
 Current GitHub Pages site:
 
-https://sutras-wear.github.io/sutras-commerce-demo/
+[Visit Sutras by S³](https://sutras-wear.github.io/sutras-commerce-demo/)
 
 The custom domain:
 
 `https://sutrasbys3.com`
 
-has been purchased and will be connected during the final production launch.
+is owned but is **not connected yet**. Connecting it requires a separate launch decision; the current website remains on GitHub Pages.
 
 ## Backend
 
@@ -40,6 +40,8 @@ Current backend protections include:
 - Customer inventory writes blocked
 - Customer order/reservation functions disabled while enquiry mode is active
 - Narrow public inventory interface exposing only storefront-required fields
+
+The public inventory view exposes eight fields: `id`, `name`, `price_zmw`, `currency`, `available_quantity`, `sizes`, `availability` and `is_low_stock`. Internal reserved quantities, thresholds, version fields and timestamps are not available through this interface. Inventory is shared across browsers and devices; local storage is used for Shopping Bag preferences and notes, not as the inventory source of truth.
 
 ## Current Release
 
@@ -57,7 +59,7 @@ This release includes:
 - Security hardening
 - Safer catalogue rendering
 - Inventory privacy improvements
-- Content Security Policy preparation
+- Active browser Content Security Policy
 - Custom-domain and Cloudflare launch preparation
 
 ## Ordering
@@ -65,6 +67,8 @@ This release includes:
 At the moment, submitting a WhatsApp enquiry does **not** automatically create or confirm an order.
 
 Final availability, sizing, pricing, delivery or collection details are confirmed directly by Sutras.
+
+Both WhatsApp contact lines support enquiries containing product names, selected sizes, quantities and customer notes. Opening WhatsApp does not create an order, reserve stock or record a successful payment. Current catalogue products remain browseable with direct ordering disabled.
 
 ## Future Catalogue Update
 
@@ -76,21 +80,21 @@ When final stock arrives, the storefront will be updated with:
 - Actual stock quantities
 - Updated product descriptions and availability
 
-The existing website architecture is designed so these updates can be made without rebuilding the storefront.
+The existing website architecture supports these catalogue updates without redesigning the storefront. Enabling real ordering is a separate step and requires confirmed product names, prices, sizes and stock, plus an explicitly approved commerce launch.
 
 ## Future Commerce Support
 
-The codebase already contains preserved backend foundations for future:
+V29 backend foundations are preserved in the Supabase project and private release/setup materials for future:
 
 - Order creation
 - Inventory reservations
 - Overselling prevention
 - Reservation expiry
-- Payment integration
+- Payment integration through a future provider and verified webhooks
 - Secure order confirmation
 - Admin and inventory management
 
-These features remain disabled until Sutras is ready to activate direct online ordering.
+Customer access to transactional functions remains disabled until Sutras is ready to activate direct online ordering. Private administrative and reservation-expiry operations remain available to authorized operators. No real payment provider is connected. Backend migrations, administrative tools and test assets are kept separate from the public storefront.
 
 ## Technology
 
@@ -103,7 +107,7 @@ These features remain disabled until Sutras is ready to activate direct online o
 
 ## Deployment
 
-The current production-preview deployment is served through GitHub Pages from the `main` branch.
+The current customer-facing website is served through GitHub Pages from the `main` branch. Static HTML, CSS, JavaScript and assets are published directly; the storefront requires no application build step.
 
 The final public deployment is planned for:
 
@@ -124,6 +128,12 @@ The storefront has been tested for:
 - HTTPS and mixed-content issues
 
 No service-role keys, database passwords, or private administrative credentials should ever be committed to this repository.
+
+The Supabase publishable key in the frontend is intentionally public; database permissions enforce access boundaries. Product text is escaped and rendered through a restricted HTML renderer, and product image URLs are limited to approved local asset paths.
+
+The active meta CSP restricts scripts and API connections and blocks unapproved inline JavaScript. Inline styles remain allowed to preserve the current design. A `no-referrer` policy is also present. GitHub Pages does not support arbitrary custom response headers: response-header anti-framing protection, `X-Content-Type-Options` and `Permissions-Policy` are prepared for the future Cloudflare launch, not claimed as active protections on the current host.
+
+Shopping Bag notes are stored locally and included in WhatsApp enquiry URLs. They should not contain sensitive personal information. QA products must remain unpublished and checkout-disabled. Changes to database access or customer ordering require explicit review and verification.
 
 ## Contact
 

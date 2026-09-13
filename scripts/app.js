@@ -9,7 +9,7 @@
 
   const $ = (selector, scope = document) => scope.querySelector(selector);
   const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
-  const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+  const escape = window.SutrasSecurity.escape;
   const icon = name => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
   const sizes = ['Not sure', 'XS', 'S', 'M', 'L', 'XL', 'XXL'];
   const storageKey = 'sutras-demo-v26-1-enquiry-bag-v1';
@@ -98,11 +98,11 @@
     if (!section || !grid) return;
     const items = recentlyViewed.map(id => byId.get(id)).filter(Boolean);
     section.hidden = items.length < 2;
-    if (items.length < 2) { grid.innerHTML = ''; return; }
-    grid.innerHTML = items.map(product => `<button class="recently-viewed-card" type="button" data-product="${escape(product.id)}" aria-label="View ${escape(product.name)}">
-      <span class="recently-viewed-image"><img src="${escape(product.image)}" alt="${escape(product.imageAlt)}" width="240" height="320" loading="lazy" decoding="async"></span>
+    if (items.length < 2) { window.SutrasSecurity.setHTML(grid, ''); return; }
+    window.SutrasSecurity.setHTML(grid, items.map(product => `<button class="recently-viewed-card" type="button" data-product="${escape(product.id)}" aria-label="View ${escape(product.name)}">
+      <span class="recently-viewed-image"><img src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="240" height="320" loading="lazy" decoding="async"></span>
       <span class="recently-viewed-copy"><strong>${escape(product.cardName || product.name)}</strong><small>${escape(product.color)} · ${escape(priceText(product))}</small></span>
-    </button>`).join('');
+    </button>`).join(''));
   }
 
   function rememberRecentlyViewed(id) {
@@ -175,7 +175,7 @@
 
   function waLink(text, line = 0) {
     const number = (config.whatsapp[line] || config.whatsapp[0]).replace(/\D/g, '');
-    return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/${number}?text=${encodeURIComponent(window.SutrasSecurity.text(text))}`;
   }
 
   function showToast(text) {
@@ -330,9 +330,9 @@
   ];
 
   function finderOptionMarkup(question) {
-    return `<div class="finder-step" data-finder-step="${question.key}">
-      <p class="finder-eyebrow">${question.eyebrow}</p><h3>${question.title}</h3>
-      <div class="finder-options" role="group" aria-label="${question.title}">${question.options.map(option => `<button class="finder-option${finderAnswers[question.key] === option.value ? ' is-selected' : ''}" type="button" data-finder-answer="${question.key}" data-finder-value="${option.value}" aria-pressed="${finderAnswers[question.key] === option.value}"><span class="finder-option-number">${String(question.options.indexOf(option)+1).padStart(2,'0')}</span><span><strong>${option.label}</strong><small>${option.note}</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>`).join('')}</div>
+    return `<div class="finder-step" data-finder-step="${escape(question.key)}">
+      <p class="finder-eyebrow">${escape(question.eyebrow)}</p><h3>${escape(question.title)}</h3>
+      <div class="finder-options" role="group" aria-label="${escape(question.title)}">${question.options.map(option => `<button class="finder-option${finderAnswers[question.key] === option.value ? ' is-selected' : ''}" type="button" data-finder-answer="${escape(question.key)}" data-finder-value="${escape(option.value)}" aria-pressed="${finderAnswers[question.key] === option.value}"><span class="finder-option-number">${String(question.options.indexOf(option)+1).padStart(2,'0')}</span><span><strong>${escape(option.label)}</strong><small>${escape(option.note)}</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>`).join('')}</div>
       <div class="finder-footer"><span>Step ${finderStep + 1} of ${finderQuestions.length}</span>${finderStep ? '<button class="text-link" type="button" data-finder-back>Back</button>' : '<span></span>'}</div>
     </div>`;
   }
@@ -377,7 +377,7 @@
     const ranked = finderResults();
     return `<div class="finder-results">
       <div class="finder-result-intro"><p class="finder-eyebrow">YOUR EDIT IS READY</p><h3>Made for your <em>moment.</em></h3><p>Up to four styles from the current catalogue, matched to your choices. Your selected shape is always respected. Nothing is booked or ordered here — just a starting point.</p></div>
-      <div class="finder-result-grid">${ranked.map((product,index) => `<button class="finder-result-card" type="button" data-product="${escape(product.id)}"><span class="finder-result-image"><img src="${escape(product.image)}" alt="${escape(product.imageAlt)}" width="500" height="670" loading="lazy" decoding="async"><span>${String(index+1).padStart(2,'0')}</span></span><span class="finder-result-copy"><strong>${escape(product.cardName || product.name)}</strong><small>${escape(product.color)}</small></span></button>`).join('')}</div>
+      <div class="finder-result-grid">${ranked.map((product,index) => `<button class="finder-result-card" type="button" data-product="${escape(product.id)}"><span class="finder-result-image"><img src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="500" height="670" loading="lazy" decoding="async"><span>${String(index+1).padStart(2,'0')}</span></span><span class="finder-result-copy"><strong>${escape(product.cardName || product.name)}</strong><small>${escape(product.color)}</small></span></button>`).join('')}</div>
       <div class="finder-result-actions"><button class="button button-rust" type="button" data-finder-browse>See your four matches <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button><button class="text-link" type="button" data-finder-restart>Start again</button></div>
     </div>`;
   }
@@ -394,11 +394,11 @@
     const progress = $('#finder-progress-bar');
     if (!content) return;
     if (finderStep >= finderQuestions.length) {
-      content.innerHTML = renderFinderResults();
+      window.SutrasSecurity.setHTML(content, renderFinderResults());
       if (progress) progress.style.width = '100%';
       return;
     }
-    content.innerHTML = finderOptionMarkup(finderQuestions[finderStep]);
+    window.SutrasSecurity.setHTML(content, finderOptionMarkup(finderQuestions[finderStep]));
     if (progress) progress.style.width = `${((finderStep) / finderQuestions.length) * 100}%`;
   }
 
@@ -457,8 +457,8 @@
     return `<article class="product-card" style="animation-delay:${index * 40}ms">
       <div class="product-image-wrap${primaryImageKind(product) === 'ai-model' ? ' model-image-wrap' : ''}${detailImage ? ' has-detail-hover' : ''}">
         <button type="button" class="product-image-link" data-product="${escape(product.id)}" aria-label="View ${escape(product.name)}${product.isPreview ? ', illustrative style preview' : primaryImageKind(product) === 'ai-model' ? ', AI-modelled view' : ''}">
-          <img class="product-image-primary" src="${escape(product.image)}" alt="${escape(product.imageAlt)}" width="896" height="1200" loading="lazy" decoding="async">
-          ${detailImage ? `<img class="product-image-detail" src="${escape(detailImage.src)}" alt="${escape(detailImage.alt || detailLabel)}" width="896" height="1200" loading="lazy" decoding="async" aria-hidden="true">` : ''}
+          <img class="product-image-primary" src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="896" height="1200" loading="lazy" decoding="async">
+          ${detailImage ? `<img class="product-image-detail" src="${escape(window.SutrasSecurity.imageURL(detailImage.src))}" alt="${escape(detailImage.alt || detailLabel)}" width="896" height="1200" loading="lazy" decoding="async" aria-hidden="true">` : ''}
           <span class="image-view-label">Take a closer look ↗</span>
           ${detailImage ? `<span class="detail-peek-label">${escape(detailLabel)} · hover to preview</span>` : ''}
         </button>
@@ -475,7 +475,7 @@
 
   function renderProducts() {
     const visible = visibleProducts();
-    $('#product-grid').innerHTML = visible.length ? visible.map(productCard).join('') : '<div class="search-empty"><h3>Something lovely is taking shape.</h3><p>Message us on WhatsApp to discover the current collection.</p></div>';
+    window.SutrasSecurity.setHTML($('#product-grid'), visible.length ? visible.map(productCard).join('') : '<div class="search-empty"><h3>Something lovely is taking shape.</h3><p>Message us on WhatsApp to discover the current collection.</p></div>');
     const countLabel = activeEdit && editDefinitions[activeEdit] ? editDefinitions[activeEdit].label : '';
     if (activeEdit) {
       $('#style-count').textContent = `${visible.length} ${visible.length === 1 ? 'style' : 'styles'} · ${countLabel}`;
@@ -549,7 +549,7 @@
       return tokens.every(token => haystack.includes(token));
     });
     $('#search-result-count').textContent = query ? `${found.length} matching style${found.length === 1 ? '' : 's'}` : `Explore all ${products.length} ${products.every(product => product.isPreview) ? 'style previews' : 'styles'}`;
-    $('#search-results').innerHTML = found.length ? found.map(product => `<button class="search-result" type="button" data-product="${escape(product.id)}"><img src="${escape(product.image)}" alt="${escape(product.imageAlt)}" width="62" height="83"><span><strong>${escape(product.cardName || product.name)}</strong><small>${escape(product.category)} · ${escape(product.color)}</small><small>${escape(imageTypeLabel(primaryImageKind(product)))}${product.isPreview ? '' : ' · ' + escape(priceText(product))}</small></span></button>`).join('') : '<div class="search-empty"><h3>No match, just yet.</h3><p>Try a colour or a category, like “blue” or “kurta”. Our actual collection is a WhatsApp message away.</p></div>';
+    window.SutrasSecurity.setHTML($('#search-results'), found.length ? found.map(product => `<button class="search-result" type="button" data-product="${escape(product.id)}"><img src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="62" height="83"><span><strong>${escape(product.cardName || product.name)}</strong><small>${escape(product.category)} · ${escape(product.color)}</small><small>${escape(imageTypeLabel(primaryImageKind(product)))}${product.isPreview ? '' : ' · ' + escape(priceText(product))}</small></span></button>`).join('') : '<div class="search-empty"><h3>No match, just yet.</h3><p>Try a colour or a category, like “blue” or “kurta”. Our actual collection is a WhatsApp message away.</p></div>');
   }
 
   $('#search-input').addEventListener('input', renderSearch);
@@ -573,10 +573,10 @@
   function productShareUrl(product) {
     let url;
     try {
-      url = new URL($('link[rel="canonical"]')?.href || 'https://sutras-wear.github.io/Sutras-by-S3/');
+      url = new URL($('link[rel="canonical"]')?.href || 'https://sutras-wear.github.io/sutras-commerce-demo/');
       if (url.protocol !== 'https:') throw new Error('Public HTTPS URL required');
     } catch (_) {
-      url = new URL('https://sutras-wear.github.io/Sutras-by-S3/');
+      url = new URL('https://sutras-wear.github.io/sutras-commerce-demo/');
     }
     url.search = '';
     url.hash = '';
@@ -606,7 +606,7 @@
       <p class="share-heading">Share this piece</p>
       <div class="product-share-actions">
         <button type="button" class="share-action" data-copy-product-link>${icon('link')}<span>Copy link</span></button>
-        <a class="share-action" id="share-product-whatsapp" href="https://wa.me/?text=${encodeURIComponent(text)}" target="_blank" rel="noopener noreferrer" aria-label="Share this product on WhatsApp (opens a new tab)">${icon('whatsapp')}<span>Share on WhatsApp</span></a>
+        <a class="share-action" id="share-product-whatsapp" href="https://wa.me/?text=${encodeURIComponent(window.SutrasSecurity.text(text))}" target="_blank" rel="noopener noreferrer" aria-label="Share this product on WhatsApp (opens a new tab)">${icon('whatsapp')}<span>Share on WhatsApp</span></a>
       </div>
       <div class="product-share-fallback" id="product-share-fallback" hidden>
         <label for="product-share-url">Product link — select and copy</label>
@@ -696,7 +696,7 @@
   function productMedia(product) {
     const photo = activeGallery[0];
     const stage = `<div class="product-detail-image${photo.kind === 'ai-model' ? ' modelled-product-image' : photo.kind === 'store-photo' ? ' real-product-image' : ''}">
-      <img id="product-main-image" src="${escape(photo.src)}" alt="${escape(photo.alt)}" width="1200" height="1600">
+      <img id="product-main-image" src="${escape(window.SutrasSecurity.imageURL(photo.src))}" alt="${escape(photo.alt)}" width="1200" height="1600">
       <div class="product-image-badge" aria-hidden="true"><span id="product-image-kind">${escape(imageTypeLabel(photo.kind))}</span></div>
       <button class="photo-nav photo-nav-prev" type="button" data-photo-prev aria-label="Show previous product view">${icon('arrow-left')}</button>
       <button class="photo-nav photo-nav-next" type="button" data-photo-next aria-label="Show next product view">${icon('arrow')}</button>
@@ -706,7 +706,7 @@
     return `<div class="product-detail-media has-gallery">${stage}
       <div class="gallery-header"><span>Views</span><span id="gallery-position">1 / ${activeGallery.length}</span></div>
       <div class="photo-gallery" role="group" aria-label="Choose a view of this product">
-        ${activeGallery.map((image, index) => `<button class="photo-thumbnail" type="button" data-photo-index="${index}" aria-pressed="${index === 0}" aria-label="Show ${escape(image.label.toLowerCase())}"><img src="${escape(image.src)}" alt="" width="72" height="96"><span>${escape(image.label)}</span></button>`).join('')}
+        ${activeGallery.map((image, index) => `<button class="photo-thumbnail" type="button" data-photo-index="${index}" aria-pressed="${index === 0}" aria-label="Show ${escape(image.label.toLowerCase())}"><img src="${escape(window.SutrasSecurity.imageURL(image.src))}" alt="" width="72" height="96"><span>${escape(image.label)}</span></button>`).join('')}
       </div>
       <p class="photo-caption" id="photo-caption" aria-live="polite">${escape(photo.caption)}</p>
     </div>`;
@@ -717,7 +717,7 @@
     selectedPhotoIndex = index;
     const photo = activeGallery[index];
     const image = $('#product-main-image');
-    image.src = photo.src;
+    image.src = window.SutrasSecurity.imageURL(photo.src);
     image.alt = photo.alt || activeProduct.imageAlt;
     image.removeAttribute('data-fallback');
     const stage = image.parentElement;
@@ -739,7 +739,7 @@
     if (!photo || !activeProduct) return;
     $('#image-viewer-title').textContent = `${activeProduct.cardName || activeProduct.name} — ${photo.label}`;
     const image = $('#image-viewer-image');
-    image.src = photo.src;
+    image.src = window.SutrasSecurity.imageURL(photo.src);
     image.alt = photo.alt || activeProduct.imageAlt;
     image.hidden = false;
     image.removeAttribute('data-fallback');
@@ -758,7 +758,7 @@
     const pieces = product.pieces || 1;
     return `<div class="quick-view-layout">
       <div class="quick-view-media ${imageKind === 'ai-model' ? 'is-model-view' : ''}">
-        <img src="${escape(product.image)}" alt="${escape(product.imageAlt)}" width="720" height="960" decoding="async">
+        <img src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="720" height="960" decoding="async">
         <span class="quick-view-image-badge">${escape(imageTypeLabel(imageKind))}</span>
       </div>
       <div class="quick-view-copy">
@@ -767,7 +767,7 @@
         <p class="quick-view-color"><span class="color-dot" style="background:${colorValue(product)}"></span>${escape(product.color)}</p>
         <p class="quick-view-description">${escape(product.description)}</p>
         <div class="quick-view-facts" aria-label="Quick style facts">
-          <div><span>PIECES</span><strong>${pieces} ${pieces === 1 ? 'piece' : 'pieces'}</strong></div>
+          <div><span>PIECES</span><strong>${escape(pieces)} ${pieces === 1 ? 'piece' : 'pieces'}</strong></div>
           <div><span>STYLE</span><strong>${escape(product.productType === 'kurti' ? 'Kurti' : 'Kurta set')}</strong></div>
           <div><span>PRICE</span><strong>${escape(priceText(product))}</strong></div>
         </div>
@@ -795,7 +795,7 @@
     if (!product) return;
     quickViewProduct = product;
     quickViewSize = 'Not sure';
-    $('#quick-view-detail').innerHTML = quickViewMarkup(product);
+    window.SutrasSecurity.setHTML($('#quick-view-detail'), quickViewMarkup(product));
     openDialog('quick-view-dialog');
     $('#quick-view-dialog').scrollTop = 0;
   }
@@ -846,7 +846,7 @@
     activeGallery = galleryFor(product);
     selectedPhotoIndex = 0;
     selectedSize = 'Not sure';
-    $('#product-detail').innerHTML = `<div class="product-detail-layout">
+    window.SutrasSecurity.setHTML($('#product-detail'), `<div class="product-detail-layout">
       ${productMedia(product)}
       <div class="product-detail-copy">
         <p class="detail-eyebrow">THE COTTON EDIT / ${escape(product.category.toUpperCase())}</p>
@@ -856,7 +856,7 @@
         <p class="detail-features">${escape(product.detail)}</p>
         <div class="detail-included"><span>WHAT’S INCLUDED</span><strong>${escape(product.setContents || 'One garment')}</strong></div>
         <div class="detail-facts" aria-label="Style facts">
-          <div><span>PIECES</span><strong>${product.pieces || 1} ${product.pieces === 1 ? 'piece' : 'pieces'}</strong></div>
+          <div><span>PIECES</span><strong>${escape(product.pieces || 1)} ${product.pieces === 1 ? 'piece' : 'pieces'}</strong></div>
           <div><span>STYLE</span><strong>${escape(product.productType === 'kurti' ? 'Kurti' : 'Kurta set')}</strong></div>
           <div><span>VIEW</span><strong>${escape(imageTypeLabel(primaryImageKind(product)))}</strong></div>
         </div>
@@ -877,7 +877,7 @@
         ${shareControls(product)}
         ${relatedStylesMarkup(product)}
       </div>
-    </div>`;
+    </div>`);
     openDialog('product-dialog');
     $('#product-dialog').scrollTop = 0;
     if (!fromAddress) updateProductAddress(product.id);
@@ -1017,18 +1017,18 @@
     $('#bag-selection-count').textContent = `${selections} style${selections === 1 ? '' : 's'}`;
     $('#bag-sticky-summary').textContent = `${count} item${count === 1 ? '' : 's'} in your bag`;
     if (!bag.length) {
-      $('#bag-items').innerHTML = `<div class="empty-bag">${icon('bag')}<h3>A little room for lovely things.</h3><p>Explore the collection and add the pieces or inspiration you love. We’ll confirm actual availability with you.</p><button class="button button-rust" type="button" data-browse-styles>Explore the collection ${icon('arrow')}</button></div>`;
+      window.SutrasSecurity.setHTML($('#bag-items'), `<div class="empty-bag">${icon('bag')}<h3>A little room for lovely things.</h3><p>Explore the collection and add the pieces or inspiration you love. We’ll confirm actual availability with you.</p><button class="button button-rust" type="button" data-browse-styles>Explore the collection ${icon('arrow')}</button></div>`);
       $('#bag-sticky-action').hidden = true;
       updateEnquiryActions();
       return;
     }
     $('#bag-sticky-action').hidden = false;
-    $('#bag-items').innerHTML = bag.map((item, index) => {
+    window.SutrasSecurity.setHTML($('#bag-items'), bag.map((item, index) => {
       const product = byId.get(item.id);
       const sizeOptions = [...new Set([...productSizes(product), item.size])].map(size => `<option value="${escape(size)}" ${item.size === size ? 'selected' : ''}>${escape(size)}</option>`).join('');
       return `<article class="bag-item" data-bag-index="${index}">
         <button class="bag-item-image" type="button" data-product="${escape(product.id)}" aria-label="View ${escape(product.name)}">
-          <img src="${escape(product.image)}" alt="${escape(product.imageAlt)}" width="79" height="106" loading="lazy" decoding="async">
+          <img src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="79" height="106" loading="lazy" decoding="async">
         </button>
         <div class="bag-item-content">
           <div class="bag-item-heading"><div><p class="bag-item-kicker">STYLE ${String(index + 1).padStart(2,'0')}</p><h3>${escape(product.cardName || product.name)}</h3></div><button class="bag-remove" type="button" data-remove="${index}" aria-label="Remove ${escape(product.name)}, size ${escape(item.size)}, from your bag">Remove</button></div>
@@ -1040,7 +1040,7 @@
           <div class="bag-item-bottom"><span>${escape(priceText(product))}</span><span>${escape(imageTypeLabel(primaryImageKind(product)))}</span></div>
         </div>
       </article>`;
-    }).join('') + '<button class="clear-bag" type="button" data-clear-bag>Clear entire bag</button>';
+    }).join('') + '<button class="clear-bag" type="button" data-clear-bag>Clear entire bag</button>');
     $('#bag-summary').textContent = `${count} requested item${count === 1 ? '' : 's'} · ${selections} selection${selections === 1 ? '' : 's'}`;
     $('.bag-disclaimer').textContent = `Your bag saves your favourites. Sending an enquiry is not a confirmed order. Website ordering is currently paused.${bag.some(item => byId.get(item.id).isPreview) ? ' Preview styles are not confirmed stock.' : ''}${bag.some(item => primaryImageKind(byId.get(item.id)) === 'ai-model') ? ' AI-modelled views illustrate styling; actual fit may differ.' : ''}${storageAvailable ? '' : ' This browser cannot save your bag between visits.'} Need help? Ask us on WhatsApp.`;
     updateWhatsAppLinks();
@@ -1195,10 +1195,10 @@
     if($('#quick-view-dialog').open && quickViewProduct){
       const size=quickViewSize;
       quickViewSize=productSizes(quickViewProduct).includes(size)?size:'Not sure';
-      $('#quick-view-detail').innerHTML=quickViewMarkup(quickViewProduct);
+      window.SutrasSecurity.setHTML($('#quick-view-detail'), quickViewMarkup(quickViewProduct));
     }
     renderBag();
-    const target=focusId?document.getElementById(focusId):sizeFocus?$(`[data-size="${sizeFocus}"]`):quickSizeFocus?$(`[data-quick-size="${quickSizeFocus}"]`):focusData?$(focusData):null;
+    const target=focusId?document.getElementById(focusId):sizeFocus?$(`[data-size="${CSS.escape(sizeFocus)}"]`):quickSizeFocus?$(`[data-quick-size="${CSS.escape(quickSizeFocus)}"]`):focusData?$(focusData):null;
     target?.focus({preventScroll:true});
     if(noteFocused && selection)target?.setSelectionRange(...selection);
     dialogs.forEach(([d,top])=>d.scrollTop=top);

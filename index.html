@@ -1,83 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-4ycYdKEO62th/fxOg8wQBu/6Ro/Us5pB63SkgLMbIhc='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src https://vwrtinivrgbiobabkurw.supabase.co; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
   <meta charset="utf-8">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f5ef">
   <title>Sutras by S³ — Pure Cotton Indian Wear · Lusaka</title>
   <meta name="description" content="Pure cotton Indian wear for women in Lusaka, Zambia. Woven in comfort. Made with intention. Discover the collection from Sutras by S³.">
-  <link rel="canonical" href="https://sutras-wear.github.io/Sutras-by-S3/">
+  <link rel="canonical" href="https://sutras-wear.github.io/sutras-commerce-demo/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sutras by S³">
   <meta property="og:locale" content="en_ZM">
   <meta property="og:title" content="Sutras by S³ — Woven in comfort.">
   <meta property="og:description" content="Pure cotton Indian wear. Made with intention. Based in Lusaka, Zambia. Explore the mood and discover our current collection on WhatsApp.">
-  <meta property="og:url" content="https://sutras-wear.github.io/Sutras-by-S3/">
-  <meta property="og:image" content="https://sutras-wear.github.io/Sutras-by-S3/assets/images/social-card.jpg">
+  <meta property="og:url" content="https://sutras-wear.github.io/sutras-commerce-demo/">
+  <meta property="og:image" content="https://sutras-wear.github.io/sutras-commerce-demo/assets/images/social-card.jpg">
   <meta property="og:image:alt" content="Sutras by S³. Pure cotton Indian wear. Illustrative campaign image.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sutras by S³ — Woven in comfort.">
   <meta name="twitter:description" content="Pure cotton Indian wear for women in Lusaka, Zambia. Explore the collection and enquire on WhatsApp.">
-  <meta name="twitter:image" content="https://sutras-wear.github.io/Sutras-by-S3/assets/images/social-card.jpg">
+  <meta name="twitter:image" content="https://sutras-wear.github.io/sutras-commerce-demo/assets/images/social-card.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/cormorant-medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/dm-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/images/hero.webp" as="image" fetchpriority="high">
-  <script id="initial-page-position">
-  (() => {
-    let interacted = false;
-    const sectionHashes = new Set(['#top', '#main', '#style-finder', '#collection', '#story', '#cotton', '#community', '#how-to-order', '#contact']);
-    function prepareVisit() {
-      try {
-        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-        // Old shared/bookmarked section links should not jump past the hero on
-        // arrival. In-page menu clicks happen later and keep working normally.
-        if (sectionHashes.has(location.hash)) {
-          const url = new URL(location.href);
-          url.hash = '';
-          history.replaceState(history.state, '', url.href);
-        }
-      } catch (_) { /* Restricted file previews may deny History API access. */ }
-    }
-    function startAtTop() {
-      if (interacted) return;
-      const root = document.documentElement;
-      const previous = root.style.scrollBehavior;
-      root.style.scrollBehavior = 'auto';
-      window.scrollTo(0, 0);
-      root.style.scrollBehavior = previous;
-    }
-    for (const event of ['pointerdown', 'touchstart', 'wheel', 'keydown']) {
-      window.addEventListener(event, () => { interacted = true; }, { capture: true, passive: true });
-    }
-    prepareVisit();
-    startAtTop();
-    document.addEventListener('DOMContentLoaded', () => {
-      startAtTop();
-      requestAnimationFrame(startAtTop);
-    }, { once: true });
-    window.addEventListener('load', () => {
-      startAtTop();
-      requestAnimationFrame(startAtTop);
-    }, { once: true });
-    window.addEventListener('pageshow', event => {
-      if (event.persisted) {
-        interacted = false;
-        prepareVisit();
-      }
-      startAtTop();
-      requestAnimationFrame(startAtTop);
-    });
-  })();
-  </script>
-  <link rel="stylesheet" href="styles.css?v=20260910-v29">
-  <script src="scripts/catalog.js?v=20260910-v29" defer></script>
-  <script src="scripts/supabase-config.js?v=28" defer></script>
-  <script src="scripts/inventory.js?v=28" defer></script>
-  <script src="scripts/app.js?v=20260910-v29" defer></script>
+  <script src="scripts/initial-page-position.js?v=29.2"></script>
+  <link rel="stylesheet" href="styles.css?v=29.2">
+  <script src="scripts/security.js?v=29.2" defer></script>
+  <script src="scripts/catalog.js?v=29.2" defer></script>
+  <script src="scripts/catalogue-safety.js?v=29.2" defer></script>
+  <script src="scripts/supabase-config.js?v=29.2" defer></script>
+  <script src="scripts/inventory.js?v=29.2" defer></script>
+  <script src="scripts/app.js?v=29.2" defer></script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"ClothingStore","@id":"https://sutras-wear.github.io/Sutras-by-S3/#store","name":"Sutras by S³","description":"Pure cotton Indian wear for women. Woven in comfort. Made with intention.","url":"https://sutras-wear.github.io/Sutras-by-S3/","telephone":"+260978865604","address":{"@type":"PostalAddress","addressLocality":"Lusaka","addressCountry":"ZM"},"contactPoint":[{"@type":"ContactPoint","telephone":"+260978865604","contactType":"customer service"},{"@type":"ContactPoint","telephone":"+260973668415","contactType":"customer service"}],"sameAs":["https://www.instagram.com/sutras.official/"]},{"@type":"WebSite","@id":"https://sutras-wear.github.io/Sutras-by-S3/#website","url":"https://sutras-wear.github.io/Sutras-by-S3/","name":"Sutras by S³","publisher":{"@id":"https://sutras-wear.github.io/Sutras-by-S3/#store"}}]}
+  {"@context":"https://schema.org","@graph":[{"@type":"ClothingStore","@id":"https://sutras-wear.github.io/sutras-commerce-demo/#store","name":"Sutras by S³","description":"Pure cotton Indian wear for women. Woven in comfort. Made with intention.","url":"https://sutras-wear.github.io/sutras-commerce-demo/","telephone":"+260978865604","address":{"@type":"PostalAddress","addressLocality":"Lusaka","addressCountry":"ZM"},"contactPoint":[{"@type":"ContactPoint","telephone":"+260978865604","contactType":"customer service"},{"@type":"ContactPoint","telephone":"+260973668415","contactType":"customer service"}],"sameAs":["https://www.instagram.com/sutras.official/"]},{"@type":"WebSite","@id":"https://sutras-wear.github.io/sutras-commerce-demo/#website","url":"https://sutras-wear.github.io/sutras-commerce-demo/","name":"Sutras by S³","publisher":{"@id":"https://sutras-wear.github.io/sutras-commerce-demo/#store"}}]}
   </script>
 </head>
 <body>

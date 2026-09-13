@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://sutras-wear.github.io/sutras-commerce-demo/sitemap.xml
+     

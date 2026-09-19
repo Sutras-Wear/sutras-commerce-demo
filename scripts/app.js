@@ -127,7 +127,7 @@
 
 
   function productSizes(product) {
-    return product.inventory?.sizes.length ? ['Not sure', ...product.inventory.sizes] : sizes;
+    return product.inventory?.sizes.length ? ['Not sure', ...product.inventory.sizes] : product.inventoryPending ? ['Not sure'] : sizes;
   }
   function selectionIssue(item) {
     const p=byId.get(item.id), inv=p?.inventory;
@@ -455,7 +455,7 @@
     const detailImage = Array.isArray(product.gallery) ? product.gallery.find(photo => photo && photo.src && photo.kind === 'ai-detail') : null;
     const detailLabel = detailImage?.label || 'Detail preview';
     return `<article class="product-card" style="animation-delay:${index * 40}ms">
-      <div class="product-image-wrap${primaryImageKind(product) === 'ai-model' ? ' model-image-wrap' : ''}${detailImage ? ' has-detail-hover' : ''}">
+      <div class="product-image-wrap${primaryImageKind(product) === 'ai-model' ? ' model-image-wrap' : primaryImageKind(product) === 'store-photo' ? ' store-image-wrap' : ''}${detailImage ? ' has-detail-hover' : ''}">
         <button type="button" class="product-image-link" data-product="${escape(product.id)}" aria-label="View ${escape(product.name)}${product.isPreview ? ', illustrative style preview' : primaryImageKind(product) === 'ai-model' ? ', AI-modelled view' : ''}">
           <img class="product-image-primary" src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="896" height="1200" loading="lazy" decoding="async">
           ${detailImage ? `<img class="product-image-detail" src="${escape(window.SutrasSecurity.imageURL(detailImage.src))}" alt="${escape(detailImage.alt || detailLabel)}" width="896" height="1200" loading="lazy" decoding="async" aria-hidden="true">` : ''}
@@ -688,7 +688,7 @@
       src: product.image,
       alt: product.imageAlt,
       kind: primaryImageKind(product),
-      label: primaryImageKind(product) === 'ai-model' ? 'Model view' : product.isPreview ? 'Style preview' : 'Full set',
+      label: primaryImageKind(product) === 'ai-model' ? 'Model view' : product.isPreview ? 'Style preview' : 'Garment view',
       caption: product.isPreview ? 'AI-generated style inspiration, not a confirmed stock photograph.' : (product.photoNote || 'Actual store photograph. Please confirm current availability on WhatsApp.')
     }, ...(Array.isArray(product.gallery) ? product.gallery.filter(photo => photo && photo.src && photo.label).map(photo => ({ ...photo, kind: photo.kind || (product.isPreview ? 'style-preview' : 'store-photo') })) : [])];
   }
@@ -757,7 +757,7 @@
     const imageKind = primaryImageKind(product);
     const pieces = product.pieces || 1;
     return `<div class="quick-view-layout">
-      <div class="quick-view-media ${imageKind === 'ai-model' ? 'is-model-view' : ''}">
+      <div class="quick-view-media ${imageKind === 'ai-model' ? 'is-model-view' : imageKind === 'store-photo' ? 'is-store-photo' : ''}">
         <img src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="720" height="960" decoding="async">
         <span class="quick-view-image-badge">${escape(imageTypeLabel(imageKind))}</span>
       </div>
@@ -773,7 +773,7 @@
         </div>
         <div class="quick-view-status">${availabilityStatusMarkup(product, 'quick-availability')}<span class="quick-view-set-contents">${escape(product.setContents || 'One garment')}</span></div>
         ${isUnavailable(product) ? `<div class="detail-unavailable ${product.availability === 'sold-out' ? 'is-sold-out' : ''}" role="status"><strong>${escape(availabilityLabel(product))}</strong><span>This style can still be explored, but it cannot be added to the shopping bag.</span></div>` : `
-          <div class="quick-size-heading"><span>Your usual size</span><strong id="quick-selected-size">Selected · ${escape(quickViewSize)}</strong></div>
+          <div class="quick-size-heading"><span>${product.inventoryPending && !product.inventory?.sizes.length ? 'Sizes to confirm' : 'Your usual size'}</span><strong id="quick-selected-size">Selected · ${escape(quickViewSize)}</strong></div>
           <div class="quick-size-list" role="group" aria-label="Usual size preference">${productSizes(product).map(size => `<button class="quick-size-option" type="button" data-quick-size="${escape(size)}" aria-pressed="${size === quickViewSize}">${escape(size)}</button>`).join('')}</div>
           <p class="quick-size-helper">A preference only — Sutras will confirm the actual garment fit.</p>
         `}
@@ -861,7 +861,7 @@
           <div><span>VIEW</span><strong>${escape(imageTypeLabel(primaryImageKind(product)))}</strong></div>
         </div>
         ${product.isPreview ? '<p class="preview-notice"><strong>A little inspiration, not a stock listing.</strong>This AI-generated image and style name are placeholders. Ask us about similar real pieces, prices and availability.</p>' : `<p class="preview-notice ${primaryImageKind(product) === 'ai-model' ? 'ai-model-notice' : 'real-photo-notice'}"><strong>${primaryImageKind(product) === 'ai-model' ? 'About the modelled view.' : 'Photographed by Sutras.'}</strong>${escape(product.photoNote || 'Actual product photograph. Please confirm the price, sizing and availability with us.')}</p>`}
-        <div class="detail-size-heading"><p class="detail-size-label" id="size-label">Your usual size <span>— a preference, not confirmed availability</span></p><span class="selected-size-pill" id="selected-size-value">Selected · ${escape(selectedSize)}</span></div>
+        <div class="detail-size-heading"><p class="detail-size-label" id="size-label">${product.inventoryPending && !product.inventory?.sizes.length ? 'Sizes to confirm' : 'Your usual size'} <span>— confirm your fit with Sutras</span></p><span class="selected-size-pill" id="selected-size-value">Selected · ${escape(selectedSize)}</span></div>
         <div class="size-list" role="group" aria-labelledby="size-label">${productSizes(product).map(size => `<button class="size-option" type="button" data-size="${escape(size)}" aria-pressed="${size === selectedSize}">${escape(size)}</button>`).join('')}</div>
         <p class="size-helper">Not sure? We can help with the actual garment’s fit.</p>
         <div class="detail-price"><span>${escape(priceText(product))}</span>${availabilityStatusMarkup(product, 'detail-availability-status')}</div>

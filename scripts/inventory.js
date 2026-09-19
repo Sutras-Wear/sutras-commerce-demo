@@ -9,11 +9,13 @@
   const fields = 'id,name,price_zmw,currency,available_quantity,sizes,availability,is_low_stock';
   let status = 'loading', lastSuccess = null, pending = null, timer;
   let fingerprint = '';
+  // Confirmed catalogue prices are independent of unconfirmed stock counts.
+  const cataloguePrice = p => p.inventoryPending === true && Number.isFinite(p.confirmedPrice) && p.confirmedPrice >= 0 ? p.confirmedPrice : null;
   function publish() { window.dispatchEvent(new CustomEvent('sutras:inventory', {detail: {status, lastSuccess}})); }
   function invalidate(next) {
     status = next;
     for (const p of products) {
-      p.inventory = null; p.price = null;
+      p.inventory = null; p.price = cataloguePrice(p);
       p.availability = originals.get(p.id).availability === 'unavailable' ? 'unavailable' : 'unconfirmed';
     }
     if(fingerprint!==next){fingerprint=next;publish();}
@@ -55,9 +57,9 @@
       for(const p of products){
         const row=records.get(p.id);
         p.inventory=row ? Object.freeze(Object.fromEntries(fields.split(',').map(k=>[k,k==='sizes'?Object.freeze([...row.sizes]):row[k]]))) : null;
-        p.price=row?.price_zmw ?? null;
+        p.price=row ? row.price_zmw : cataloguePrice(p);
         if(row){p.name=row.name;p.cardName=row.name===originals.get(p.id).name ? originals.get(p.id).cardName : row.name;}
-        p.availability=!row ? 'unavailable' : row.availability==='unconfirmed' ? 'unconfirmed' : row.availability==='unavailable' ? 'unavailable' : row.available_quantity===0 ? 'sold-out' : row.is_low_stock ? 'low' : 'available';
+        p.availability=!row ? (p.inventoryPending === true ? 'unconfirmed' : 'unavailable') : row.availability==='unconfirmed' ? 'unconfirmed' : row.availability==='unavailable' ? 'unavailable' : row.available_quantity===0 ? 'sold-out' : row.is_low_stock ? 'low' : 'available';
       }
       if(next!==fingerprint){fingerprint=next;publish();}
     } catch (_) { invalidate('offline'); }

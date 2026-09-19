@@ -70,7 +70,15 @@ Final availability, sizing, pricing, delivery or collection details are confirme
 
 Both WhatsApp contact lines support enquiries containing product names, selected sizes, quantities and customer notes. Opening WhatsApp does not create an order, reserve stock or record a successful payment. Current catalogue products remain browseable with direct ordering disabled.
 
-## Future Catalogue Update
+## Real Catalogue Update — September 2026
+
+The collection now contains 24 real garment listings with 129 optimized photographs and owner-confirmed ZMW prices. Existing campaign/styling image assets are retained. Available sizes and stock quantities have been deferred by the owner; these listings show availability to confirm and an unspecified size for WhatsApp enquiries.
+
+New listings use unique `real-` product IDs. No old inventory row has been reassigned and no live inventory quantity has been changed. Supabase remains connected through the existing read-only public view. Until an exact matching inventory row is established, an `inventoryPending` listing displays its `confirmedPrice` without claiming stock availability. A valid matching shared row takes precedence; invalid data or an outage never produces a stock count. Unknown legacy listings still retain the existing unavailable behavior.
+
+When confirmed sizes and quantities arrive, create/verify the exact matching shared inventory records before removing the pending marker. Do not map products by colour alone or carry over previous quantities. Customer ordering, payment and reservations remain disabled, and the custom domain remains deferred.
+
+## Future Inventory Update
 
 When final stock arrives, the storefront will be updated with:
 

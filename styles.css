@@ -742,3 +742,6 @@ body{background:var(--paper);text-rendering:optimizeLegibility}
   .bag-sticky-action #bag-checkout-mobile .icon{display:none}
   .bag-checkout-mode{font-size:6.5px}
 }
+
+/* Keep real garment photographs complete within existing cards and Quick View. */
+.store-image-wrap .product-image-primary,.quick-view-media.is-store-photo>img{object-fit:contain;object-position:center}

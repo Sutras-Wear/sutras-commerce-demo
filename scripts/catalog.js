@@ -1,4 +1,4 @@
-/* Sutras editable catalogue. Extra product photos are hidden pending better replacements. */
+/* Real catalogue: owner-confirmed prices; sizes and stock await confirmation. */
 window.SUTRAS = {
   "name": "Sutras by S³",
   "instagram": "https://www.instagram.com/sutras.official/",
@@ -10,334 +10,1314 @@ window.SUTRAS = {
   "imageryIsIllustrative": true,
   "products": [
     {
-      "id": "orange-three-piece-set",
-      "name": "Orange Three-Piece Kurta Set",
-      "cardName": "Orange Kurta Set",
+      "id": "real-black-red-medallion-two-piece-kurta-set",
+      "name": "Black & Red Medallion Two-Piece Kurta Set",
+      "cardName": "Black & Red Medallion Set",
       "category": "Kurta sets",
-      "color": "Orange & multicolour",
-      "colorHex": "#e86a29",
-      "image": "assets/images/orange-set-model-clean.webp",
-      "imageKind": "ai-model",
-      "imageAlt": "AI-generated styling preview of an adult woman wearing the orange kurta with printed bottoms and a plain orange dupatta. Fit and small details are illustrative.",
-      "description": "An orange kurta with a decorative neckline and leaf motifs, paired with multicoloured printed bottoms and a matching plain orange dupatta. Three pieces: the kurta (top), bottoms and dupatta (scarf).",
-      "detail": "Three pieces shown · Embellished neckline · Leaf details & patterned fabric",
-      "setContents": "Kurta, printed bottoms and plain orange dupatta (3 pieces)",
-      "pieces": 3,
+      "color": "Black & red",
+      "colorHex": "#252023",
+      "image": "assets/images/real-catalogue/real-black-red-medallion-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Black & Red Medallion Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A black kurta with a brick-red medallion panel and contrasting patterned borders, paired with plain black trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
       "productType": "set",
-      "photoNote": "This image is AI-generated styling. Fit, length, drape and small details are approximate. Please confirm actual garment details, prices and availability with Sutras before ordering.",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
       "gallery": [
-        {"src":"assets/images/orange-details/neckline.webp","alt":"Generated close-up of the orange kurta neckline showing layered embroidered trim and tassel detailing.","label":"Neckline detail","kind":"ai-detail","caption":"AI-generated detail illustration based on the modelled garment: layered neckline embroidery and tie-up tassels."},
-        {"src":"assets/images/orange-details/sleeve.webp","alt":"Generated close-up of the orange kurta sleeve cuff with floral embroidery and a narrow border.","label":"Sleeve detail","kind":"ai-detail","caption":"AI-generated detail illustration based on the modelled garment: three-quarter sleeve cuff with floral border embroidery."},
-        {"src":"assets/images/orange-details/front-design.webp","alt":"Generated close-up of the orange kurta front neckline embroidery with hanging tassels.","label":"Front design","kind":"ai-detail","caption":"AI-generated detail illustration based on the modelled garment: front embroidery, threadwork and tassel accents."},
-        {"src":"assets/images/orange-details/fabric-print.webp","alt":"Generated macro-style view of the orange set fabric and multicoloured floral print.","label":"Fabric & print","kind":"ai-detail","caption":"AI-generated detail illustration based on the modelled garment: orange cotton texture and coordinated floral print."},
-        {"src":"assets/images/orange-details/hem.webp","alt":"Generated close-up of the orange kurta hem with a fine embroidered border and small motif.","label":"Hem detail","kind":"ai-detail","caption":"AI-generated detail illustration based on the modelled garment: clean hem finish with a delicate border and motif."},
-        {"src":"assets/images/orange-details/back.webp","alt":"Generated rear view close-up of the orange kurta showing the neckline edge and small back motif.","label":"Back detail","kind":"ai-detail","caption":"AI-generated detail illustration based on the modelled garment: restrained back embroidery and neckline finishing."},
-        {"src":"assets/images/orange-details/pants.webp","alt":"Generated close-up of the printed orange trousers from the three-piece set.","label":"Pant detail","kind":"ai-detail","caption":"AI-generated detail illustration based on the modelled garment: coordinated printed bottoms with floral and geometric motifs."},
-        {"src":"assets/images/orange-details/tie-up.webp","alt":"Generated close-up of orange tassel tie-up detailing with small bead accents.","label":"Tie-up detail","kind":"ai-detail","caption":"AI-generated detail illustration based on the modelled garment: adjustable tie-up tassels with bead accents."},
-        {"src":"assets/images/orange-details/embroidery-closeup.webp","alt":"Generated close-up of orange fabric showing delicate floral embroidery and border threadwork.","label":"Embroidery close-up","kind":"ai-detail","caption":"AI-generated detail illustration based on the modelled garment: fine floral embroidery and border threadwork."}
+        {
+          "src": "assets/images/real-catalogue/real-black-red-medallion-two-piece-kurta-set/02.webp",
+          "alt": "Black & Red Medallion Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-black-red-medallion-two-piece-kurta-set/03.webp",
+          "alt": "Black & Red Medallion Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-black-red-medallion-two-piece-kurta-set/04.webp",
+          "alt": "Black & Red Medallion Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-black-red-medallion-two-piece-kurta-set/05.webp",
+          "alt": "Black & Red Medallion Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
       ],
-      "price": null,
-      "availability": "unavailable",
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
       "isPreview": false
     },
     {
-      "id": "pink-three-piece-set",
-      "name": "Pink Three-Piece Kurta Set",
-      "cardName": "Pink Kurta Set",
+      "id": "real-navy-red-motif-two-piece-kurta-set",
+      "name": "Navy & Red Motif Two-Piece Kurta Set",
+      "cardName": "Navy & Red Motif Set",
       "category": "Kurta sets",
-      "color": "Fuchsia pink",
-      "colorHex": "#d63377",
-      "image": "assets/images/pink-set-model.webp",
-      "imageKind": "ai-model",
-      "imageAlt": "AI-generated styling preview of an adult woman wearing a fuchsia pink kurta with small gold motifs, matching pink bottoms and a tasseled dupatta. Fit and small details are illustrative.",
-      "description": "A vivid pink kurta with fine front pleats, scattered gold motifs and a gold-trimmed neckline and cuffs. Paired with matching pink bottoms and a tasseled dupatta — the scarf that completes this three-piece set.",
-      "detail": "Three pieces shown · Fine front pleats · Gold accents · Tasseled dupatta",
-      "setContents": "Kurta, matching pink bottoms and tasseled dupatta (3 pieces)",
-      "pieces": 3,
+      "color": "Navy & red",
+      "colorHex": "#243047",
+      "image": "assets/images/real-catalogue/real-navy-red-motif-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Navy & Red Motif Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A navy kurta with red motifs, patterned vertical panels and a tassel neckline, paired with red trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
       "productType": "set",
-      "photoNote": "This image is AI-generated styling. Fit, length, drape and small details are approximate. Please confirm actual garment details, prices and availability with Sutras before ordering.",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
       "gallery": [
-        {"src":"assets/images/details/pink-three-piece-set/detail-1.webp","alt":"AI-derived close-up detail view of the pink three piece set showing neckline & trim.","label":"Neckline & Trim","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/pink-three-piece-set/detail-2.webp","alt":"AI-derived close-up detail view of the pink three piece set showing front motif detail.","label":"Front Motif Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/pink-three-piece-set/detail-3.webp","alt":"AI-derived close-up detail view of the pink three piece set showing sleeve cuff.","label":"Sleeve Cuff","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/pink-three-piece-set/detail-4.webp","alt":"AI-derived close-up detail view of the pink three piece set showing fabric & motifs.","label":"Fabric & Motifs","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/pink-three-piece-set/detail-5.webp","alt":"AI-derived close-up detail view of the pink three piece set showing bottoms detail.","label":"Bottoms Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/pink-three-piece-set/detail-6.webp","alt":"AI-derived close-up detail view of the pink three piece set showing dupatta detail.","label":"Dupatta Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
+        {
+          "src": "assets/images/real-catalogue/real-navy-red-motif-two-piece-kurta-set/02.webp",
+          "alt": "Navy & Red Motif Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-navy-red-motif-two-piece-kurta-set/03.webp",
+          "alt": "Navy & Red Motif Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-navy-red-motif-two-piece-kurta-set/04.webp",
+          "alt": "Navy & Red Motif Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-navy-red-motif-two-piece-kurta-set/05.webp",
+          "alt": "Navy & Red Motif Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
       ],
-      "price": null,
-      "availability": "unavailable",
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
       "isPreview": false
     },
     {
-      "id": "navy-two-piece-set",
-      "name": "Navy Two-Piece Kurta Set",
-      "cardName": "Navy Kurta Set",
+      "id": "real-aqua-floral-detail-two-piece-kurta-set",
+      "name": "Aqua Floral-Detail Two-Piece Kurta Set",
+      "cardName": "Aqua Floral-Detail Set",
       "category": "Kurta sets",
-      "color": "Navy & ivory",
-      "colorHex": "#354b61",
-      "image": "assets/images/navy-set-model.webp",
-      "imageKind": "ai-model",
-      "imageAlt": "AI-generated styling preview of an adult woman wearing a navy and ivory printed kurta with matching trousers, without a scarf. Fit and small details are illustrative.",
-      "description": "Small ivory motifs and larger paisley details on a navy ground, finished with fine contrast piping and pleat details. Matching printed bottoms complete this two-piece set. No scarf or dupatta is included.",
-      "detail": "Two pieces: kurta + bottoms · Floral & paisley print · No scarf / dupatta",
-      "setContents": "Kurta and matching printed bottoms only (2 pieces; no scarf/dupatta)",
+      "color": "Aqua",
+      "colorHex": "#61b9c1",
+      "image": "assets/images/real-catalogue/real-aqua-floral-detail-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Aqua Floral-Detail Two-Piece Kurta Set photographed by Sutras.",
+      "description": "An aqua gathered kurta with pale floral detailing at the chest and cuffs, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
       "pieces": 2,
       "productType": "set",
-      "photoNote": "This image is AI-generated styling. Fit, length, drape and small details are approximate. Please confirm actual garment details, prices and availability with Sutras before ordering.",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
       "gallery": [
-        {"src":"assets/images/details/navy-two-piece-set/detail-1.webp","alt":"AI-derived close-up detail view of the navy two piece set showing neckline detail.","label":"Neckline Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/navy-two-piece-set/detail-2.webp","alt":"AI-derived close-up detail view of the navy two piece set showing front print detail.","label":"Front Print Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/navy-two-piece-set/detail-3.webp","alt":"AI-derived close-up detail view of the navy two piece set showing sleeve cuff.","label":"Sleeve Cuff","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/navy-two-piece-set/detail-4.webp","alt":"AI-derived close-up detail view of the navy two piece set showing paisley & print.","label":"Paisley & Print","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/navy-two-piece-set/detail-5.webp","alt":"AI-derived close-up detail view of the navy two piece set showing hem detail.","label":"Hem Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/navy-two-piece-set/detail-6.webp","alt":"AI-derived close-up detail view of the navy two piece set showing trouser detail.","label":"Trouser Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
+        {
+          "src": "assets/images/real-catalogue/real-aqua-floral-detail-two-piece-kurta-set/02.webp",
+          "alt": "Aqua Floral-Detail Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-aqua-floral-detail-two-piece-kurta-set/03.webp",
+          "alt": "Aqua Floral-Detail Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-aqua-floral-detail-two-piece-kurta-set/04.webp",
+          "alt": "Aqua Floral-Detail Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-aqua-floral-detail-two-piece-kurta-set/05.webp",
+          "alt": "Aqua Floral-Detail Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
       ],
-      "price": null,
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
       "isPreview": false
     },
     {
-      "id": "green-two-piece-set",
-      "name": "Green Two-Piece Kurta Set",
-      "cardName": "Green Kurta Set",
+      "id": "real-cocoa-floral-three-piece-kurta-set",
+      "name": "Cocoa Floral Three-Piece Kurta Set",
+      "cardName": "Cocoa Floral Set",
       "category": "Kurta sets",
-      "color": "Olive green",
-      "colorHex": "#a5af70",
-      "image": "assets/images/green-set-model.webp",
-      "imageKind": "ai-model",
-      "imageAlt": "AI-generated styling preview of an adult woman wearing an olive-green kurta with a red floral neckline panel and coordinating plain green trousers, without a scarf. Fit and small details are illustrative.",
-      "description": "An olive-green kurta with delicate red floral detail on its framed neckline panel and subtle dark cuff trim. Coordinating plain green bottoms complete the two-piece outfit. No scarf or dupatta is included.",
-      "detail": "Two pieces: kurta + bottoms · Floral yoke detail · No scarf / dupatta",
-      "setContents": "Kurta and coordinating plain green bottoms only (2 pieces; no scarf/dupatta)",
-      "pieces": 2,
+      "color": "Cocoa brown",
+      "colorHex": "#85624c",
+      "image": "assets/images/real-catalogue/real-cocoa-floral-three-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Cocoa Floral Three-Piece Kurta Set photographed by Sutras.",
+      "description": "A cocoa-brown kurta with colourful floral medallions and a tassel neckline, paired with brown trousers and a floral scarf.",
+      "detail": "Kurta, trousers and scarf (dupatta)",
+      "setContents": "Kurta, trousers and scarf (dupatta)",
+      "pieces": 3,
       "productType": "set",
-      "photoNote": "This image is AI-generated styling. Fit, length, drape and small details are approximate. Please confirm actual garment details, prices and availability with Sutras before ordering.",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
       "gallery": [
-        {"src":"assets/images/details/green-two-piece-set/detail-1.webp","alt":"AI-derived close-up detail view of the green two piece set showing embroidered yoke.","label":"Embroidered Yoke","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/green-two-piece-set/detail-2.webp","alt":"AI-derived close-up detail view of the green two piece set showing neckline detail.","label":"Neckline Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/green-two-piece-set/detail-3.webp","alt":"AI-derived close-up detail view of the green two piece set showing sleeve cuff.","label":"Sleeve Cuff","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/green-two-piece-set/detail-4.webp","alt":"AI-derived close-up detail view of the green two piece set showing floral motif.","label":"Floral Motif","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/green-two-piece-set/detail-5.webp","alt":"AI-derived close-up detail view of the green two piece set showing hem detail.","label":"Hem Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/green-two-piece-set/detail-6.webp","alt":"AI-derived close-up detail view of the green two piece set showing trouser detail.","label":"Trouser Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
+        {
+          "src": "assets/images/real-catalogue/real-cocoa-floral-three-piece-kurta-set/02.webp",
+          "alt": "Cocoa Floral Three-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-cocoa-floral-three-piece-kurta-set/03.webp",
+          "alt": "Cocoa Floral Three-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-cocoa-floral-three-piece-kurta-set/04.webp",
+          "alt": "Cocoa Floral Three-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-cocoa-floral-three-piece-kurta-set/05.webp",
+          "alt": "Cocoa Floral Three-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
       ],
-      "price": null,
+      "price": 850,
+      "confirmedPrice": 850,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
       "isPreview": false
     },
     {
-      "id": "white-floral-two-piece-set",
-      "name": "White Floral Two-Piece Set",
-      "cardName": "White Floral Set",
-      "category": "Co-ord sets",
-      "color": "White, grey & teal",
-      "colorHex": "#e4e3de",
-      "description": "A white collared button-front shirt with an asymmetric floral panel and printed cuffs, paired with coordinating floral-hem trousers. Two pieces only: shirt and bottoms, with no scarf or dupatta.",
-      "detail": "Two pieces: shirt + trousers · Floral panels · No scarf / dupatta",
-      "setContents": "Button-front shirt and coordinating floral-hem trousers (2 pieces; no scarf/dupatta)",
+      "id": "real-slate-blue-floral-detail-two-piece-kurta-set",
+      "name": "Slate Blue Floral-Detail Two-Piece Kurta Set",
+      "cardName": "Slate Blue Floral-Detail Set",
+      "category": "Kurta sets",
+      "color": "Slate blue",
+      "colorHex": "#517b98",
+      "image": "assets/images/real-catalogue/real-slate-blue-floral-detail-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Slate Blue Floral-Detail Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A slate-blue gathered kurta with floral detailing across the chest and cuffs, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
       "pieces": 2,
       "productType": "set",
-      "imageAlt": "AI-generated styling preview of an adult woman in a white floral-panel collared shirt and matching floral-hem trousers, without a scarf. Fit and details are illustrative.",
-      "photoNote": "This image is AI-generated styling. Fit, length, drape and small details are approximate. Please confirm actual garment details, prices and availability with Sutras before ordering.",
-      "image": "assets/images/white-floral-set-model.webp",
-      "imageKind": "ai-model",
-      "price": null,
-      "isPreview": false,
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
       "gallery": [
-        {"src":"assets/images/details/white-floral-two-piece-set/detail-1.webp","alt":"AI-derived close-up detail view of the white floral two piece set showing collar detail.","label":"Collar Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/white-floral-two-piece-set/detail-2.webp","alt":"AI-derived close-up detail view of the white floral two piece set showing button front.","label":"Button Front","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/white-floral-two-piece-set/detail-3.webp","alt":"AI-derived close-up detail view of the white floral two piece set showing floral panel.","label":"Floral Panel","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/white-floral-two-piece-set/detail-4.webp","alt":"AI-derived close-up detail view of the white floral two piece set showing sleeve print.","label":"Sleeve Print","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/white-floral-two-piece-set/detail-5.webp","alt":"AI-derived close-up detail view of the white floral two piece set showing fabric & print.","label":"Fabric & Print","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/white-floral-two-piece-set/detail-6.webp","alt":"AI-derived close-up detail view of the white floral two piece set showing trouser hem.","label":"Trouser Hem","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
-      ]
-    },
-    {
-      "id": "yellow-floral-kurti",
-      "name": "Yellow Short Kurti — Top Only",
-      "cardName": "Yellow Kurti (Top Only)",
-      "category": "Kurtas",
-      "color": "Mustard yellow & white",
-      "colorHex": "#b9a620",
-      "description": "A short, hip/upper-thigh-length mustard-yellow kurti with white floral and paisley neckline detail, scattered motifs and decorated cuffs. This listing is for the kurti only. The model’s ivory trousers are styling only and are not included.",
-      "detail": "Short kurti only · White floral detail · No bottoms or scarf included",
-      "setContents": "Short yellow kurti only (1 piece); model styling trousers, footwear and scarf are not included",
-      "pieces": 1,
-      "productType": "kurti",
-      "imageAlt": "AI-generated styling preview of an adult woman wearing a short yellow floral kurti ending at the hips/upper thighs. The ivory trousers are styling only and are not included.",
-      "photoNote": "This is a short, top-only kurti. The model’s trousers and footwear are styling props, not included merchandise. This image is AI-generated styling; exact fit and garment details should be confirmed with the store.",
-      "image": "assets/images/yellow-kurti-short-model.webp",
-      "imageKind": "ai-model",
-      "price": null,
-      "isPreview": false,
-      "gallery": [
-        {"src":"assets/images/details/yellow-floral-kurti/detail-1.webp","alt":"AI-derived close-up detail view of the yellow floral kurti showing neckline detail.","label":"Neckline Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/yellow-floral-kurti/detail-2.webp","alt":"AI-derived close-up detail view of the yellow floral kurti showing front motifs.","label":"Front Motifs","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/yellow-floral-kurti/detail-3.webp","alt":"AI-derived close-up detail view of the yellow floral kurti showing sleeve cuff.","label":"Sleeve Cuff","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/yellow-floral-kurti/detail-4.webp","alt":"AI-derived close-up detail view of the yellow floral kurti showing embroidery detail.","label":"Embroidery Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/yellow-floral-kurti/detail-5.webp","alt":"AI-derived close-up detail view of the yellow floral kurti showing hem detail.","label":"Hem Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/yellow-floral-kurti/detail-6.webp","alt":"AI-derived close-up detail view of the yellow floral kurti showing fabric texture.","label":"Fabric Texture","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
-      ]
-    },
-    {
-      "id": "dark-purple-three-piece-set",
-      "name": "Dark Purple Three-Piece Kurta Set",
-      "cardName": "Dark Purple Kurta Set",
-      "category": "Kurta sets",
-      "color": "Deep purple & white",
-      "colorHex": "#3c254e",
-      "description": "A deep-purple kurta with intricate white neckline and cuff details, coordinated with decorated-hem trousers and a dupatta with a white leafy-vine border. Three pieces: kurta, bottoms and scarf.",
-      "detail": "Three pieces · White neckline and cuff detail · Leaf-border dupatta",
-      "setContents": "Dark-purple kurta, decorated-hem bottoms and leaf-border dupatta (3 pieces)",
-      "pieces": 3,
-      "productType": "set",
-      "imageAlt": "AI-generated styling preview of an adult woman wearing a dark-purple kurta, white-detailed trouser hems and a matching leafy-border dupatta. Fit and details are illustrative.",
-      "photoNote": "This image is AI-generated styling. Fit, length, drape and small details are approximate. Please confirm actual garment details, prices and availability with Sutras before ordering.",
-      "image": "assets/images/dark-purple-set-model.webp",
-      "imageKind": "ai-model",
-      "price": null,
-      "availability": "unavailable",
-      "isPreview": false,
-      "gallery": [
-        {"src":"assets/images/details/dark-purple-three-piece-set/detail-1.webp","alt":"AI-derived close-up detail view of the dark purple three piece set showing neckline embroidery.","label":"Neckline Embroidery","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/dark-purple-three-piece-set/detail-2.webp","alt":"AI-derived close-up detail view of the dark purple three piece set showing front detail.","label":"Front Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/dark-purple-three-piece-set/detail-3.webp","alt":"AI-derived close-up detail view of the dark purple three piece set showing sleeve cuff.","label":"Sleeve Cuff","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/dark-purple-three-piece-set/detail-4.webp","alt":"AI-derived close-up detail view of the dark purple three piece set showing fabric & motifs.","label":"Fabric & Motifs","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/dark-purple-three-piece-set/detail-5.webp","alt":"AI-derived close-up detail view of the dark purple three piece set showing trouser hem.","label":"Trouser Hem","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/dark-purple-three-piece-set/detail-6.webp","alt":"AI-derived close-up detail view of the dark purple three piece set showing dupatta border.","label":"Dupatta Border","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
-      ]
-    },
-    {
-      "id": "plum-purple-three-piece-set",
-      "name": "Plum Purple Three-Piece Kurta Set",
-      "cardName": "Plum Purple Kurta Set",
-      "category": "Kurta sets",
-      "color": "Plum purple & white",
-      "colorHex": "#77277e",
-      "description": "A plum-purple kurta with a white paisley-floral neckline and scattered small flower details. Coordinating bottoms with a narrow white trim and a small-flower dupatta complete the three-piece set.",
-      "detail": "Three pieces · White paisley-floral neckline · Small-flower dupatta",
-      "setContents": "Plum-purple kurta, narrow-trim bottoms and small-flower dupatta (3 pieces)",
-      "pieces": 3,
-      "productType": "set",
-      "imageAlt": "AI-generated styling preview of an adult woman wearing a plum-purple kurta with white paisley-floral detail, coordinating trousers and a small-flower dupatta. Fit and details are illustrative.",
-      "photoNote": "This image is AI-generated styling. Fit, length, drape and small details are approximate. Please confirm actual garment details, prices and availability with Sutras before ordering.",
-      "image": "assets/images/plum-purple-set-model.webp",
-      "imageKind": "ai-model",
-      "price": null,
-      "availability": "unavailable",
-      "isPreview": false,
-      "gallery": [
-        {"src":"assets/images/details/plum-purple-three-piece-set/detail-1.webp","alt":"AI-derived close-up detail view of the plum purple three piece set showing neckline detail.","label":"Neckline Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/plum-purple-three-piece-set/detail-2.webp","alt":"AI-derived close-up detail view of the plum purple three piece set showing front motifs.","label":"Front Motifs","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/plum-purple-three-piece-set/detail-3.webp","alt":"AI-derived close-up detail view of the plum purple three piece set showing sleeve cuff.","label":"Sleeve Cuff","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/plum-purple-three-piece-set/detail-4.webp","alt":"AI-derived close-up detail view of the plum purple three piece set showing fabric & motifs.","label":"Fabric & Motifs","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/plum-purple-three-piece-set/detail-5.webp","alt":"AI-derived close-up detail view of the plum purple three piece set showing hem detail.","label":"Hem Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/plum-purple-three-piece-set/detail-6.webp","alt":"AI-derived close-up detail view of the plum purple three piece set showing dupatta detail.","label":"Dupatta Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
-      ]
-    },
-    {
-      "id": "olive-lattice-short-kurti",
-      "name": "Olive Lattice Short Kurti — Top Only",
-      "cardName": "Olive Short Kurti",
-      "color": "Olive green",
-      "colorHex": "#657532",
-      "description": "A short olive-green kurti with lattice-textured chest panels, small white accents and buttons, and white paisley sleeve details. Hip/upper-thigh length. Top only; the model’s ivory trousers and footwear are styling props and are not included.",
-      "detail": "Short top only · Lattice-textured front · White sleeve detail",
-      "category": "Kurtas",
-      "image": "assets/images/olive-lattice-short-kurti-model.webp",
-      "imageKind": "ai-model",
-      "price": null,
-      "isPreview": false,
-      "imageAlt": "AI-generated styling view of an adult woman wearing the olive green short kurti at hip/upper-thigh length. The ivory trousers are styling only, not included.",
-      "setContents": "Olive green short kurti only (1 piece); styling trousers and footwear are not included. No scarf included",
-      "pieces": 1,
-      "productType": "kurti",
-      "photoNote": "This is a short, top-only kurti. The model’s trousers and footwear are styling props, not included merchandise. This image is AI-generated styling; exact fit and garment details should be confirmed with the store.",
-      "gallery": [
-        {"src":"assets/images/details/olive-lattice-short-kurti/detail-1.webp","alt":"AI-derived close-up detail view of the olive lattice short kurti showing chest embroidery.","label":"Chest Embroidery","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/olive-lattice-short-kurti/detail-2.webp","alt":"AI-derived close-up detail view of the olive lattice short kurti showing neckline detail.","label":"Neckline Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/olive-lattice-short-kurti/detail-3.webp","alt":"AI-derived close-up detail view of the olive lattice short kurti showing sleeve embroidery.","label":"Sleeve Embroidery","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/olive-lattice-short-kurti/detail-4.webp","alt":"AI-derived close-up detail view of the olive lattice short kurti showing lattice pattern.","label":"Lattice Pattern","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/olive-lattice-short-kurti/detail-5.webp","alt":"AI-derived close-up detail view of the olive lattice short kurti showing hem detail.","label":"Hem Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/olive-lattice-short-kurti/detail-6.webp","alt":"AI-derived close-up detail view of the olive lattice short kurti showing fabric texture.","label":"Fabric Texture","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
-      ]
-    },
-    {
-      "id": "slate-grey-short-kurti",
-      "name": "Slate Grey Short Kurti — Top Only",
-      "cardName": "Grey Short Kurti",
-      "color": "Slate grey",
-      "colorHex": "#495963",
-      "description": "A short slate-grey kurti with dark tone-on-tone neckline detailing, tie tassels and scattered decorative motifs. Hip/upper-thigh length. Top only; the model’s ivory trousers and footwear are styling props and are not included.",
-      "detail": "Short top only · Tone-on-tone detail · Neck ties",
-      "category": "Kurtas",
-      "image": "assets/images/slate-grey-short-kurti-model.webp",
-      "imageKind": "ai-model",
-      "price": null,
-      "isPreview": false,
-      "imageAlt": "AI-generated styling view of an adult woman wearing the slate grey short kurti at hip/upper-thigh length. The ivory trousers are styling only, not included.",
-      "setContents": "Slate grey short kurti only (1 piece); styling trousers and footwear are not included. No scarf included",
-      "pieces": 1,
-      "productType": "kurti",
-      "photoNote": "This is a short, top-only kurti. The model’s trousers and footwear are styling props, not included merchandise. This image is AI-generated styling; exact fit and garment details should be confirmed with the store.",
-      "gallery": [
-        {"src":"assets/images/details/slate-grey-short-kurti/detail-1.webp","alt":"AI-derived close-up detail view of the slate grey short kurti showing neckline detail.","label":"Neckline Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/slate-grey-short-kurti/detail-2.webp","alt":"AI-derived close-up detail view of the slate grey short kurti showing chest embroidery.","label":"Chest Embroidery","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/slate-grey-short-kurti/detail-3.webp","alt":"AI-derived close-up detail view of the slate grey short kurti showing sleeve detail.","label":"Sleeve Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/slate-grey-short-kurti/detail-4.webp","alt":"AI-derived close-up detail view of the slate grey short kurti showing front motif.","label":"Front Motif","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/slate-grey-short-kurti/detail-5.webp","alt":"AI-derived close-up detail view of the slate grey short kurti showing hem detail.","label":"Hem Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/slate-grey-short-kurti/detail-6.webp","alt":"AI-derived close-up detail view of the slate grey short kurti showing fabric texture.","label":"Fabric Texture","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
-      ]
-    },
-    {
-      "id": "wine-floral-short-kurti",
-      "name": "Wine Floral Short Kurti — Top Only",
-      "cardName": "Wine Short Kurti",
-      "color": "Wine purple",
-      "colorHex": "#792244",
-      "description": "A short wine-purple kurti with a pale floral chest motif, a notched neckline and fine coordinating cuff trim. Hip/upper-thigh length. Top only; the model’s ivory trousers and footwear are styling props and are not included.",
-      "detail": "Short top only · Floral neckline detail · Fine cuff trim",
-      "category": "Kurtas",
-      "image": "assets/images/wine-floral-short-kurti-model.webp",
-      "imageKind": "ai-model",
-      "price": null,
-      "isPreview": false,
-      "imageAlt": "AI-generated styling view of an adult woman wearing the wine purple short kurti at hip/upper-thigh length. The ivory trousers are styling only, not included.",
-      "setContents": "Wine purple short kurti only (1 piece); styling trousers and footwear are not included. No scarf included",
-      "pieces": 1,
-      "productType": "kurti",
-      "photoNote": "This is a short, top-only kurti. The model’s trousers and footwear are styling props, not included merchandise. This image is AI-generated styling; exact fit and garment details should be confirmed with the store.",
-      "gallery": [
-        {"src":"assets/images/details/wine-floral-short-kurti/detail-1.webp","alt":"AI-derived close-up detail view of the wine floral short kurti showing neckline embroidery.","label":"Neckline Embroidery","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/wine-floral-short-kurti/detail-2.webp","alt":"AI-derived close-up detail view of the wine floral short kurti showing floral chest detail.","label":"Floral Chest Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/wine-floral-short-kurti/detail-3.webp","alt":"AI-derived close-up detail view of the wine floral short kurti showing sleeve cuff.","label":"Sleeve Cuff","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/wine-floral-short-kurti/detail-4.webp","alt":"AI-derived close-up detail view of the wine floral short kurti showing fabric & flowers.","label":"Fabric & Flowers","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/wine-floral-short-kurti/detail-5.webp","alt":"AI-derived close-up detail view of the wine floral short kurti showing hem detail.","label":"Hem Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/wine-floral-short-kurti/detail-6.webp","alt":"AI-derived close-up detail view of the wine floral short kurti showing threadwork close-up.","label":"Threadwork Close-Up","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
-      ]
-    },
-    {
-      "id": "dark-green-floral-two-piece-set",
-      "name": "Dark Green Floral Two-Piece Kurta Set",
-      "cardName": "Dark Green Floral Set",
-      "category": "Kurta sets",
-      "color": "Deep green & floral",
-      "colorHex": "#164b4c",
-      "image": "assets/images/dark-green-floral-set-model.webp",
-      "imageKind": "ai-model",
-      "imageAlt": "AI-generated styling view of an adult woman in a long dark-green button-front floral kurta and matching plain trousers, without a scarf. Fit and details are illustrative.",
-      "description": "A longer dark-green button-front kurta with fine chest pleats and pink-and-yellow floral panels, paired with coordinating plain trousers. Shown as a two-piece outfit: kurta and bottoms, with no scarf pictured. Please confirm availability and final garment details when ordering.",
-      "detail": "Long kurta + plain trousers · Floral panels · No scarf shown",
-      "setContents": "Long floral kurta and coordinating plain trousers (2 pieces as photographed; no scarf shown)",
-      "pieces": 2,
-      "productType": "set",
-      "photoNote": "This image is AI-generated styling. Fit, length, drape and small details are approximate. Please confirm actual garment details, prices and availability with Sutras before ordering.",
-      "gallery": [
-        {"src":"assets/images/details/dark-green-floral-two-piece-set/detail-1.webp","alt":"AI-derived close-up detail view of the dark green floral two piece set showing button front.","label":"Button Front","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/dark-green-floral-two-piece-set/detail-2.webp","alt":"AI-derived close-up detail view of the dark green floral two piece set showing collar detail.","label":"Collar Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/dark-green-floral-two-piece-set/detail-3.webp","alt":"AI-derived close-up detail view of the dark green floral two piece set showing floral sleeve.","label":"Floral Sleeve","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/dark-green-floral-two-piece-set/detail-4.webp","alt":"AI-derived close-up detail view of the dark green floral two piece set showing side floral panel.","label":"Side Floral Panel","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/dark-green-floral-two-piece-set/detail-5.webp","alt":"AI-derived close-up detail view of the dark green floral two piece set showing hem detail.","label":"Hem Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."},
-        {"src":"assets/images/details/dark-green-floral-two-piece-set/detail-6.webp","alt":"AI-derived close-up detail view of the dark green floral two piece set showing trouser detail.","label":"Trouser Detail","kind":"ai-detail","caption":"AI-derived detail view from the modelled garment image; use as a visual guide and confirm exact garment details with Sutras."}
+        {
+          "src": "assets/images/real-catalogue/real-slate-blue-floral-detail-two-piece-kurta-set/02.webp",
+          "alt": "Slate Blue Floral-Detail Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-slate-blue-floral-detail-two-piece-kurta-set/03.webp",
+          "alt": "Slate Blue Floral-Detail Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-slate-blue-floral-detail-two-piece-kurta-set/04.webp",
+          "alt": "Slate Blue Floral-Detail Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-slate-blue-floral-detail-two-piece-kurta-set/05.webp",
+          "alt": "Slate Blue Floral-Detail Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
       ],
-      "price": null,
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-olive-pink-floral-three-piece-kurta-set",
+      "name": "Olive Pink-Floral Three-Piece Kurta Set",
+      "cardName": "Olive Pink-Floral Set",
+      "category": "Kurta sets",
+      "color": "Olive & pink",
+      "colorHex": "#727044",
+      "image": "assets/images/real-catalogue/real-olive-pink-floral-three-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Olive Pink-Floral Three-Piece Kurta Set photographed by Sutras.",
+      "description": "An olive kurta with pink floral detailing and a tassel neckline, paired with coordinated trousers and a matching scarf.",
+      "detail": "Kurta, trousers and scarf (dupatta)",
+      "setContents": "Kurta, trousers and scarf (dupatta)",
+      "pieces": 3,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-olive-pink-floral-three-piece-kurta-set/02.webp",
+          "alt": "Olive Pink-Floral Three-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-olive-pink-floral-three-piece-kurta-set/03.webp",
+          "alt": "Olive Pink-Floral Three-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-olive-pink-floral-three-piece-kurta-set/04.webp",
+          "alt": "Olive Pink-Floral Three-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-olive-pink-floral-three-piece-kurta-set/05.webp",
+          "alt": "Olive Pink-Floral Three-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 1150,
+      "confirmedPrice": 1150,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-deep-teal-floral-border-three-piece-kurta-set",
+      "name": "Deep Teal Floral-Border Three-Piece Kurta Set",
+      "cardName": "Deep Teal Floral-Border Set",
+      "category": "Kurta sets",
+      "color": "Deep teal",
+      "colorHex": "#214e58",
+      "image": "assets/images/real-catalogue/real-deep-teal-floral-border-three-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Deep Teal Floral-Border Three-Piece Kurta Set photographed by Sutras.",
+      "description": "A deep-teal kurta with warm floral borders at the neckline, sleeves and hem, paired with coordinated trousers and a scarf.",
+      "detail": "Kurta, trousers and scarf (dupatta)",
+      "setContents": "Kurta, trousers and scarf (dupatta)",
+      "pieces": 3,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-deep-teal-floral-border-three-piece-kurta-set/02.webp",
+          "alt": "Deep Teal Floral-Border Three-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-deep-teal-floral-border-three-piece-kurta-set/03.webp",
+          "alt": "Deep Teal Floral-Border Three-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-deep-teal-floral-border-three-piece-kurta-set/04.webp",
+          "alt": "Deep Teal Floral-Border Three-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-deep-teal-floral-border-three-piece-kurta-set/05.webp",
+          "alt": "Deep Teal Floral-Border Three-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-deep-teal-floral-border-three-piece-kurta-set/06.webp",
+          "alt": "Deep Teal Floral-Border Three-Piece Kurta Set ? garment view 6.",
+          "label": "Garment view 6",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 950,
+      "confirmedPrice": 950,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-rust-floral-three-piece-kurta-set",
+      "name": "Rust Floral Three-Piece Kurta Set",
+      "cardName": "Rust Floral Set",
+      "category": "Kurta sets",
+      "color": "Rust",
+      "colorHex": "#bd5235",
+      "image": "assets/images/real-catalogue/real-rust-floral-three-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Rust Floral Three-Piece Kurta Set photographed by Sutras.",
+      "description": "A rust kurta with reflective floral details, a tassel neckline and patterned side panels, paired with decorated trousers and a patterned scarf.",
+      "detail": "Kurta, trousers and scarf (dupatta)",
+      "setContents": "Kurta, trousers and scarf (dupatta)",
+      "pieces": 3,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-rust-floral-three-piece-kurta-set/02.webp",
+          "alt": "Rust Floral Three-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-rust-floral-three-piece-kurta-set/03.webp",
+          "alt": "Rust Floral Three-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-rust-floral-three-piece-kurta-set/04.webp",
+          "alt": "Rust Floral Three-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-rust-floral-three-piece-kurta-set/05.webp",
+          "alt": "Rust Floral Three-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-rust-floral-three-piece-kurta-set/06.webp",
+          "alt": "Rust Floral Three-Piece Kurta Set ? garment view 6.",
+          "label": "Garment view 6",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 1350,
+      "confirmedPrice": 1350,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-sand-floral-outline-two-piece-kurta-set",
+      "name": "Sand Floral-Outline Two-Piece Kurta Set",
+      "cardName": "Sand Floral-Outline Set",
+      "category": "Kurta sets",
+      "color": "Sand",
+      "colorHex": "#bbaa8b",
+      "image": "assets/images/real-catalogue/real-sand-floral-outline-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Sand Floral-Outline Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A sand-coloured kurta with large brown floral outlines and contrasting trim, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-sand-floral-outline-two-piece-kurta-set/02.webp",
+          "alt": "Sand Floral-Outline Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sand-floral-outline-two-piece-kurta-set/03.webp",
+          "alt": "Sand Floral-Outline Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sand-floral-outline-two-piece-kurta-set/04.webp",
+          "alt": "Sand Floral-Outline Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sand-floral-outline-two-piece-kurta-set/05.webp",
+          "alt": "Sand Floral-Outline Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 700,
+      "confirmedPrice": 700,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-dusty-peach-floral-two-piece-kurta-set",
+      "name": "Dusty Peach Floral Two-Piece Kurta Set",
+      "cardName": "Dusty Peach Floral Set",
+      "category": "Kurta sets",
+      "color": "Dusty peach",
+      "colorHex": "#bd9281",
+      "image": "assets/images/real-catalogue/real-dusty-peach-floral-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Dusty Peach Floral Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A dusty-peach kurta with fine front pleats and colourful floral details, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-dusty-peach-floral-two-piece-kurta-set/02.webp",
+          "alt": "Dusty Peach Floral Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-dusty-peach-floral-two-piece-kurta-set/03.webp",
+          "alt": "Dusty Peach Floral Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-dusty-peach-floral-two-piece-kurta-set/04.webp",
+          "alt": "Dusty Peach Floral Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-dusty-peach-floral-two-piece-kurta-set/05.webp",
+          "alt": "Dusty Peach Floral Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-ivory-black-floral-border-two-piece-kurta-set",
+      "name": "Ivory & Black Floral-Border Two-Piece Kurta Set",
+      "cardName": "Ivory & Black Floral-Border Set",
+      "category": "Kurta sets",
+      "color": "Ivory & black",
+      "colorHex": "#eae3cf",
+      "image": "assets/images/real-catalogue/real-ivory-black-floral-border-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Ivory & Black Floral-Border Two-Piece Kurta Set photographed by Sutras.",
+      "description": "An ivory kurta framed by black floral borders and a contrasting neckline, paired with coordinated trousers with striped hems.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-ivory-black-floral-border-two-piece-kurta-set/02.webp",
+          "alt": "Ivory & Black Floral-Border Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-black-floral-border-two-piece-kurta-set/03.webp",
+          "alt": "Ivory & Black Floral-Border Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-black-floral-border-two-piece-kurta-set/04.webp",
+          "alt": "Ivory & Black Floral-Border Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-black-floral-border-two-piece-kurta-set/05.webp",
+          "alt": "Ivory & Black Floral-Border Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-black-floral-border-two-piece-kurta-set/06.webp",
+          "alt": "Ivory & Black Floral-Border Two-Piece Kurta Set ? garment view 6.",
+          "label": "Garment view 6",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 700,
+      "confirmedPrice": 700,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-sage-garden-floral-two-piece-kurta-set",
+      "name": "Sage Garden-Floral Two-Piece Kurta Set",
+      "cardName": "Sage Garden-Floral Set",
+      "category": "Kurta sets",
+      "color": "Sage green",
+      "colorHex": "#929581",
+      "image": "assets/images/real-catalogue/real-sage-garden-floral-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Sage Garden-Floral Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A sage-green button-front kurta with a pleated chest and colourful floral accents, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-sage-garden-floral-two-piece-kurta-set/02.webp",
+          "alt": "Sage Garden-Floral Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sage-garden-floral-two-piece-kurta-set/03.webp",
+          "alt": "Sage Garden-Floral Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sage-garden-floral-two-piece-kurta-set/04.webp",
+          "alt": "Sage Garden-Floral Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sage-garden-floral-two-piece-kurta-set/05.webp",
+          "alt": "Sage Garden-Floral Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sage-garden-floral-two-piece-kurta-set/06.webp",
+          "alt": "Sage Garden-Floral Two-Piece Kurta Set ? garment view 6.",
+          "label": "Garment view 6",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-pale-sage-floral-detail-two-piece-kurta-set",
+      "name": "Pale Sage Floral-Detail Two-Piece Kurta Set",
+      "cardName": "Pale Sage Floral-Detail Set",
+      "category": "Kurta sets",
+      "color": "Pale sage",
+      "colorHex": "#bdc8b5",
+      "image": "assets/images/real-catalogue/real-pale-sage-floral-detail-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Pale Sage Floral-Detail Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A pale-sage kurta with light floral detailing at the chest and cuffs, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-pale-sage-floral-detail-two-piece-kurta-set/02.webp",
+          "alt": "Pale Sage Floral-Detail Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-pale-sage-floral-detail-two-piece-kurta-set/03.webp",
+          "alt": "Pale Sage Floral-Detail Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-pale-sage-floral-detail-two-piece-kurta-set/04.webp",
+          "alt": "Pale Sage Floral-Detail Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-pale-sage-floral-detail-two-piece-kurta-set/05.webp",
+          "alt": "Pale Sage Floral-Detail Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-sea-teal-garden-floral-two-piece-kurta-set",
+      "name": "Sea Teal Garden-Floral Two-Piece Kurta Set",
+      "cardName": "Sea Teal Garden-Floral Set",
+      "category": "Kurta sets",
+      "color": "Sea teal",
+      "colorHex": "#438d98",
+      "image": "assets/images/real-catalogue/real-sea-teal-garden-floral-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Sea Teal Garden-Floral Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A sea-teal button-front kurta with fine pleats and colourful floral detailing, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-sea-teal-garden-floral-two-piece-kurta-set/02.webp",
+          "alt": "Sea Teal Garden-Floral Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sea-teal-garden-floral-two-piece-kurta-set/03.webp",
+          "alt": "Sea Teal Garden-Floral Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sea-teal-garden-floral-two-piece-kurta-set/04.webp",
+          "alt": "Sea Teal Garden-Floral Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sea-teal-garden-floral-two-piece-kurta-set/05.webp",
+          "alt": "Sea Teal Garden-Floral Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-rose-pink-floral-detail-two-piece-kurta-set",
+      "name": "Rose Pink Floral-Detail Two-Piece Kurta Set",
+      "cardName": "Rose Pink Floral-Detail Set",
+      "category": "Kurta sets",
+      "color": "Rose pink",
+      "colorHex": "#d8a1af",
+      "image": "assets/images/real-catalogue/real-rose-pink-floral-detail-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Rose Pink Floral-Detail Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A rose-pink gathered kurta with tonal floral detailing across the chest and cuffs, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-rose-pink-floral-detail-two-piece-kurta-set/02.webp",
+          "alt": "Rose Pink Floral-Detail Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-rose-pink-floral-detail-two-piece-kurta-set/03.webp",
+          "alt": "Rose Pink Floral-Detail Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-rose-pink-floral-detail-two-piece-kurta-set/04.webp",
+          "alt": "Rose Pink Floral-Detail Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-rose-pink-floral-detail-two-piece-kurta-set/05.webp",
+          "alt": "Rose Pink Floral-Detail Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-lilac-floral-detail-two-piece-kurta-set",
+      "name": "Lilac Floral-Detail Two-Piece Kurta Set",
+      "cardName": "Lilac Floral-Detail Set",
+      "category": "Kurta sets",
+      "color": "Lilac",
+      "colorHex": "#bca9ce",
+      "image": "assets/images/real-catalogue/real-lilac-floral-detail-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Lilac Floral-Detail Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A lilac gathered kurta with pale floral detailing at the chest and cuffs, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-lilac-floral-detail-two-piece-kurta-set/02.webp",
+          "alt": "Lilac Floral-Detail Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-lilac-floral-detail-two-piece-kurta-set/03.webp",
+          "alt": "Lilac Floral-Detail Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-lilac-floral-detail-two-piece-kurta-set/04.webp",
+          "alt": "Lilac Floral-Detail Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-lilac-floral-detail-two-piece-kurta-set/05.webp",
+          "alt": "Lilac Floral-Detail Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-lilac-floral-detail-two-piece-kurta-set/06.webp",
+          "alt": "Lilac Floral-Detail Two-Piece Kurta Set ? garment view 6.",
+          "label": "Garment view 6",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-burnt-orange-floral-neck-two-piece-kurta-set",
+      "name": "Burnt Orange Floral-Neck Two-Piece Kurta Set",
+      "cardName": "Burnt Orange Floral-Neck Set",
+      "category": "Kurta sets",
+      "color": "Burnt orange",
+      "colorHex": "#c6713e",
+      "image": "assets/images/real-catalogue/real-burnt-orange-floral-neck-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Burnt Orange Floral-Neck Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A burnt-orange kurta with a floral neckline, fine vertical pleats and decorative sleeve details, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-burnt-orange-floral-neck-two-piece-kurta-set/02.webp",
+          "alt": "Burnt Orange Floral-Neck Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-burnt-orange-floral-neck-two-piece-kurta-set/03.webp",
+          "alt": "Burnt Orange Floral-Neck Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-burnt-orange-floral-neck-two-piece-kurta-set/04.webp",
+          "alt": "Burnt Orange Floral-Neck Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-burnt-orange-floral-neck-two-piece-kurta-set/05.webp",
+          "alt": "Burnt Orange Floral-Neck Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 700,
+      "confirmedPrice": 700,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-ivory-orange-botanical-three-piece-kurta-set",
+      "name": "Ivory & Orange Botanical Three-Piece Kurta Set",
+      "cardName": "Ivory & Orange Botanical Set",
+      "category": "Kurta sets",
+      "color": "Ivory & orange",
+      "colorHex": "#e7dac1",
+      "image": "assets/images/real-catalogue/real-ivory-orange-botanical-three-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Ivory & Orange Botanical Three-Piece Kurta Set photographed by Sutras.",
+      "description": "An ivory kurta with orange botanical motifs and a contrasting decorative neckline, paired with patterned trousers and a bordered scarf.",
+      "detail": "Kurta, trousers and scarf (dupatta)",
+      "setContents": "Kurta, trousers and scarf (dupatta)",
+      "pieces": 3,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-ivory-orange-botanical-three-piece-kurta-set/02.webp",
+          "alt": "Ivory & Orange Botanical Three-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-orange-botanical-three-piece-kurta-set/03.webp",
+          "alt": "Ivory & Orange Botanical Three-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-orange-botanical-three-piece-kurta-set/04.webp",
+          "alt": "Ivory & Orange Botanical Three-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-orange-botanical-three-piece-kurta-set/05.webp",
+          "alt": "Ivory & Orange Botanical Three-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-orange-botanical-three-piece-kurta-set/06.webp",
+          "alt": "Ivory & Orange Botanical Three-Piece Kurta Set ? garment view 6.",
+          "label": "Garment view 6",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 850,
+      "confirmedPrice": 850,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-tangerine-floral-yoke-three-piece-kurta-set",
+      "name": "Tangerine Floral-Yoke Three-Piece Kurta Set",
+      "cardName": "Tangerine Floral-Yoke Set",
+      "category": "Kurta sets",
+      "color": "Tangerine",
+      "colorHex": "#de8239",
+      "image": "assets/images/real-catalogue/real-tangerine-floral-yoke-three-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Tangerine Floral-Yoke Three-Piece Kurta Set photographed by Sutras.",
+      "description": "A tangerine kurta with a floral chest panel and scalloped detailing, paired with matching trousers and a coordinated scarf.",
+      "detail": "Kurta, trousers and scarf (dupatta)",
+      "setContents": "Kurta, trousers and scarf (dupatta)",
+      "pieces": 3,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-tangerine-floral-yoke-three-piece-kurta-set/02.webp",
+          "alt": "Tangerine Floral-Yoke Three-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-tangerine-floral-yoke-three-piece-kurta-set/03.webp",
+          "alt": "Tangerine Floral-Yoke Three-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-tangerine-floral-yoke-three-piece-kurta-set/04.webp",
+          "alt": "Tangerine Floral-Yoke Three-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-tangerine-floral-yoke-three-piece-kurta-set/05.webp",
+          "alt": "Tangerine Floral-Yoke Three-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 1050,
+      "confirmedPrice": 1050,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-coral-yellow-floral-three-piece-kurta-set",
+      "name": "Coral & Yellow Floral Three-Piece Kurta Set",
+      "cardName": "Coral & Yellow Floral Set",
+      "category": "Kurta sets",
+      "color": "Coral pink & yellow",
+      "colorHex": "#e9979d",
+      "image": "assets/images/real-catalogue/real-coral-yellow-floral-three-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Coral & Yellow Floral Three-Piece Kurta Set photographed by Sutras.",
+      "description": "A coral-pink kurta with bold yellow floral motifs, paired with contrasting dark-blue trousers and a pink tasseled scarf.",
+      "detail": "Kurta, trousers and scarf (dupatta)",
+      "setContents": "Kurta, trousers and scarf (dupatta)",
+      "pieces": 3,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-coral-yellow-floral-three-piece-kurta-set/02.webp",
+          "alt": "Coral & Yellow Floral Three-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-coral-yellow-floral-three-piece-kurta-set/03.webp",
+          "alt": "Coral & Yellow Floral Three-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-coral-yellow-floral-three-piece-kurta-set/04.webp",
+          "alt": "Coral & Yellow Floral Three-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-coral-yellow-floral-three-piece-kurta-set/05.webp",
+          "alt": "Coral & Yellow Floral Three-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 1250,
+      "confirmedPrice": 1250,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-lavender-white-motif-two-piece-kurta-set",
+      "name": "Lavender & White Motif Two-Piece Kurta Set",
+      "cardName": "Lavender & White Motif Set",
+      "category": "Kurta sets",
+      "color": "Lavender & white",
+      "colorHex": "#b5a0cf",
+      "image": "assets/images/real-catalogue/real-lavender-white-motif-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Lavender & White Motif Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A lavender kurta with pale repeating motifs and decorative borders, paired with white trousers with detailed hems.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-lavender-white-motif-two-piece-kurta-set/02.webp",
+          "alt": "Lavender & White Motif Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-lavender-white-motif-two-piece-kurta-set/03.webp",
+          "alt": "Lavender & White Motif Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-lavender-white-motif-two-piece-kurta-set/04.webp",
+          "alt": "Lavender & White Motif Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-lavender-white-motif-two-piece-kurta-set/05.webp",
+          "alt": "Lavender & White Motif Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-lavender-white-motif-two-piece-kurta-set/06.webp",
+          "alt": "Lavender & White Motif Two-Piece Kurta Set ? garment view 6.",
+          "label": "Garment view 6",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-sky-blue-garden-floral-two-piece-kurta-set",
+      "name": "Sky Blue Garden-Floral Two-Piece Kurta Set",
+      "cardName": "Sky Blue Garden-Floral Set",
+      "category": "Kurta sets",
+      "color": "Sky blue",
+      "colorHex": "#47a9cd",
+      "image": "assets/images/real-catalogue/real-sky-blue-garden-floral-two-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Sky Blue Garden-Floral Two-Piece Kurta Set photographed by Sutras.",
+      "description": "A sky-blue kurta with pink floral arrangements across the front and cuffs, paired with matching trousers.",
+      "detail": "Kurta and trousers",
+      "setContents": "Kurta and trousers",
+      "pieces": 2,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-sky-blue-garden-floral-two-piece-kurta-set/02.webp",
+          "alt": "Sky Blue Garden-Floral Two-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sky-blue-garden-floral-two-piece-kurta-set/03.webp",
+          "alt": "Sky Blue Garden-Floral Two-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sky-blue-garden-floral-two-piece-kurta-set/04.webp",
+          "alt": "Sky Blue Garden-Floral Two-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-sky-blue-garden-floral-two-piece-kurta-set/05.webp",
+          "alt": "Sky Blue Garden-Floral Two-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 750,
+      "confirmedPrice": 750,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-ivory-multicolour-floral-three-piece-kurta-set",
+      "name": "Ivory Multicolour Floral Three-Piece Kurta Set",
+      "cardName": "Ivory Multicolour Floral Set",
+      "category": "Kurta sets",
+      "color": "Ivory & multicolour",
+      "colorHex": "#eee6d6",
+      "image": "assets/images/real-catalogue/real-ivory-multicolour-floral-three-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Ivory Multicolour Floral Three-Piece Kurta Set photographed by Sutras.",
+      "description": "An ivory kurta with colourful flower motifs and delicate patterned borders, paired with ivory trousers and a fringed scarf.",
+      "detail": "Kurta, trousers and scarf (dupatta)",
+      "setContents": "Kurta, trousers and scarf (dupatta)",
+      "pieces": 3,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-ivory-multicolour-floral-three-piece-kurta-set/02.webp",
+          "alt": "Ivory Multicolour Floral Three-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-multicolour-floral-three-piece-kurta-set/03.webp",
+          "alt": "Ivory Multicolour Floral Three-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-multicolour-floral-three-piece-kurta-set/04.webp",
+          "alt": "Ivory Multicolour Floral Three-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-multicolour-floral-three-piece-kurta-set/05.webp",
+          "alt": "Ivory Multicolour Floral Three-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-ivory-multicolour-floral-three-piece-kurta-set/06.webp",
+          "alt": "Ivory Multicolour Floral Three-Piece Kurta Set ? garment view 6.",
+          "label": "Garment view 6",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 1500,
+      "confirmedPrice": 1500,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
+      "isPreview": false
+    },
+    {
+      "id": "real-chartreuse-floral-three-piece-kurta-set",
+      "name": "Chartreuse Floral Three-Piece Kurta Set",
+      "cardName": "Chartreuse Floral Set",
+      "category": "Kurta sets",
+      "color": "Chartreuse",
+      "colorHex": "#b8ba37",
+      "image": "assets/images/real-catalogue/real-chartreuse-floral-three-piece-kurta-set/01.webp",
+      "imageKind": "store-photo",
+      "imageAlt": "Chartreuse Floral Three-Piece Kurta Set photographed by Sutras.",
+      "description": "A chartreuse kurta with pale floral detailing, reflective accents and tassels, paired with matching trousers and a patterned scarf.",
+      "detail": "Kurta, trousers and scarf (dupatta)",
+      "setContents": "Kurta, trousers and scarf (dupatta)",
+      "pieces": 3,
+      "productType": "set",
+      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "gallery": [
+        {
+          "src": "assets/images/real-catalogue/real-chartreuse-floral-three-piece-kurta-set/02.webp",
+          "alt": "Chartreuse Floral Three-Piece Kurta Set ? garment view 2.",
+          "label": "Garment view 2",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-chartreuse-floral-three-piece-kurta-set/03.webp",
+          "alt": "Chartreuse Floral Three-Piece Kurta Set ? garment view 3.",
+          "label": "Garment view 3",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-chartreuse-floral-three-piece-kurta-set/04.webp",
+          "alt": "Chartreuse Floral Three-Piece Kurta Set ? garment view 4.",
+          "label": "Garment view 4",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-chartreuse-floral-three-piece-kurta-set/05.webp",
+          "alt": "Chartreuse Floral Three-Piece Kurta Set ? garment view 5.",
+          "label": "Garment view 5",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        },
+        {
+          "src": "assets/images/real-catalogue/real-chartreuse-floral-three-piece-kurta-set/06.webp",
+          "alt": "Chartreuse Floral Three-Piece Kurta Set ? garment view 6.",
+          "label": "Garment view 6",
+          "kind": "store-photo",
+          "caption": "Actual garment photograph supplied by Sutras."
+        }
+      ],
+      "price": 1150,
+      "confirmedPrice": 1150,
+      "inventoryPending": true,
+      "availability": "unconfirmed",
       "isPreview": false
     }
   ]

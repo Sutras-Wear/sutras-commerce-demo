@@ -745,3 +745,15 @@ body{background:var(--paper);text-rendering:optimizeLegibility}
 
 /* Keep real garment photographs complete within existing cards and Quick View. */
 .store-image-wrap .product-image-primary,.quick-view-media.is-store-photo>img{object-fit:contain;object-position:center}
+
+/* Keep the mobile enquiry action in its own row, outside the scrolling bag. */
+.bag-scroll-content{display:contents}
+@media(max-width:760px){
+  .bag-dialog{padding:0;overflow:hidden}
+  .bag-dialog[open]{display:flex;flex-direction:column}
+  .bag-scroll-content{display:block;flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:22px 17px;scroll-padding-block:16px}
+  .bag-sticky-action{position:static;flex:0 0 auto;width:100%;box-sizing:border-box}
+}
+@media(max-width:380px){
+  .bag-scroll-content{padding-inline:14px}
+}

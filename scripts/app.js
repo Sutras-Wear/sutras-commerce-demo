@@ -560,13 +560,22 @@
     $('#search-input').focus();
   });
 
+  function enquiryItem(product, size, quantity) {
+    const sizing = size === 'Not sure' ? 'Help me choose' : size;
+    const frontImage = new URL(window.SutrasSecurity.imageURL(product.image), productShareUrl(product));
+    const photoLabel = product.isPreview ? 'Style preview' : primaryImageKind(product) === 'ai-model' ? 'Front image (AI styling)' : 'Front photo';
+    return `${product.name}\nQty: ${quantity} | Size: ${sizing}\n${photoLabel}: ${frontImage.href}`;
+  }
+
   function directMessage(product, size = 'Not sure') {
-    const intro = product.isPreview
-      ? `Hi Sutras by S³! I saw the illustrative style preview “${product.name}” (${product.category}, ${product.color}) on your website. I understand this is inspiration, not confirmed stock. Could you share similar current pieces, prices and available sizes?`
-      : `Hi Sutras by S³! I’m interested in ${product.name} (${product.category}, ${product.color}). Could you confirm the price and availability?`;
-    const imageNote = primaryImageKind(product) === 'ai-model' ? ' I viewed the AI-modelled image and understand that fit and styling are approximate; please confirm the actual garment details.' : '';
-    const contentsNote = product.setContents ? `\nSet: ${product.setContents}.` : '';
-    return `${intro}${imageNote}${contentsNote}\nMy usual size: ${size === 'Not sure' ? 'I would appreciate sizing advice' : size}.`;
+    return [
+      'Hi Sutras! I would like to enquire about:',
+      '',
+      enquiryItem(product, size, 1),
+      '',
+      ...(product.isPreview ? ['Please suggest an available piece like this preview.'] : []),
+      'Please confirm availability, fit and delivery options. Thank you!'
+    ].join('\n');
   }
 
   // Share only a public product identifier, never a customer's size, bag or note.
@@ -972,24 +981,14 @@
   }
 
   function enquiryMessage() {
-    const hasPreviews = bag.some(item => byId.get(item.id).isPreview);
-    const hasModelledViews = bag.some(item => primaryImageKind(byId.get(item.id)) === 'ai-model');
-    const lines = [
-      'Hi Sutras by S³! I’d love to enquire about pure cotton Indian wear.',
-      hasPreviews ? 'My selection below may include real product photos and illustrative style previews. Only items labelled “style preview” are inspiration, not confirmed stock. Please confirm availability of the photographed pieces and share real alternatives for the previews, with prices and sizes.' : 'I saved these pieces on your website. Please confirm prices and availability.',
-      ...(hasModelledViews ? ['AI-modelled views are styling illustrations. Please confirm the actual garment details and fit.'] : []),
+    return [
+      'Hi Sutras! I would like to enquire about:',
       '',
-      ...bag.map((item, index) => {
-        const product = byId.get(item.id);
-        const size = item.size === 'Not sure' ? 'sizing advice please' : item.size;
-        const contentsNote = product.setContents ? `\n   Set: ${product.setContents}` : '';
-        return `${index + 1}. ${product.name}${product.isPreview ? ' (style preview)' : primaryImageKind(product) === 'ai-model' ? ' (AI-modelled view)' : ' (store photograph)'} — ${product.color}${contentsNote}\n   Usual size: ${size} | Requested quantity: ${item.quantity}`;
-      }),
-      '',
-      ...(orderNote.trim() ? [`My note: ${orderNote.trim()}`, ''] : []),
-      'Please help me with availability, sizing and delivery or collection options. This is an enquiry, not a confirmed order. Thank you!'
-    ];
-    return lines.join('\n');
+      ...bag.map((item, index) => `${index + 1}. ${enquiryItem(byId.get(item.id), item.size, item.quantity)}\n`),
+      ...(orderNote.trim() ? [`Note: ${orderNote.trim()}`, ''] : []),
+      ...(bag.some(item => byId.get(item.id).isPreview) ? ['Please suggest available pieces for any style previews.'] : []),
+      'Please confirm availability, fit and delivery options. Thank you!'
+    ].join('\n');
   }
 
   function updateWhatsAppLinks() {

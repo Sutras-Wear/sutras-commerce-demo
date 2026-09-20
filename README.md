@@ -72,7 +72,7 @@ Both WhatsApp contact lines support enquiries containing product names, selected
 
 ## Real Catalogue Update — September 2026
 
-The collection now contains 24 real garment listings with 129 optimized photographs and owner-confirmed ZMW prices. Existing campaign/styling image assets are retained. Available sizes and stock quantities have been deferred by the owner; these listings show availability to confirm and an unspecified size for WhatsApp enquiries.
+The collection contains 24 real garment listings with owner-confirmed ZMW prices and 144 AI-generated model and detail images (six per outfit), based on the supplied garment photographs. Galleries identify AI styling and note that fine details and fit may vary. Original garment photos are preserved in the owner's catalogue archives and remain available through Sutras. Existing campaign assets are retained. Available sizes and stock quantities have been deferred by the owner; listings show availability to confirm and an unspecified size for WhatsApp enquiries.
 
 New listings use unique `real-` product IDs. No old inventory row has been reassigned and no live inventory quantity has been changed. Supabase remains connected through the existing read-only public view. Until an exact matching inventory row is established, an `inventoryPending` listing displays its `confirmedPrice` without claiming stock availability. A valid matching shared row takes precedence; invalid data or an outage never produces a stock count. Unknown legacy listings still retain the existing unavailable behavior.
 

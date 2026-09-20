@@ -306,7 +306,7 @@
         { value: 'everyday', label: 'Everyday', note: 'Easy pieces for ordinary days.' },
         { value: 'occasion', label: 'A little occasion', note: 'Something with a little more presence.' },
         { value: 'complete', label: 'A complete set', note: 'Coordinated pieces, ready to style.' },
-        { value: 'simple', label: 'Keep it simple', note: 'One easy piece, no overthinking.' }
+        { value: 'simple', label: 'Keep it simple', note: 'An easy outfit, no overthinking.' }
       ]
     },
     {
@@ -321,9 +321,9 @@
     {
       key: 'silhouette', eyebrow: '03 · WHAT SHAPE?', title: 'Choose your kind of piece.',
       options: [
-        { value: 'set', label: 'Two-piece set', note: 'A kurta with matching bottoms.' },
-        { value: 'three', label: 'Three-piece set', note: 'Kurta, bottoms and dupatta.' },
-        { value: 'kurti', label: 'Kurti', note: 'A single kurti to style your way.' },
+        { value: 'set', label: 'Two-piece set', note: 'A kurta and trousers.' },
+        { value: 'three', label: 'Three-piece set', note: 'Kurta, trousers and scarf.' },
+        ...(products.some(product => product.pieces === 1 && product.productType === 'kurti') ? [{ value: 'kurti', label: 'Kurti', note: 'A single kurti to style your way.' }] : []),
         { value: 'any', label: 'Surprise me', note: 'Let the collection decide.' }
       ]
     }
@@ -337,32 +337,30 @@
     </div>`;
   }
 
+  // Use the catalogue colour field, not incidental words in descriptions.
+  const finderMoodColours = {
+    soft: /^(aqua|sand|dusty peach|ivory & black|sage green|pale sage|rose pink|lilac|lavender & white|sky blue|ivory & orange|ivory & multicolour)$/i,
+    bright: /^(black & red|navy & red|rose pink|burnt orange|tangerine|coral pink & yellow|ivory & orange|ivory & multicolour|chartreuse)$/i,
+    deep: /^(black & red|navy & red|cocoa brown|slate blue|deep teal|rust|sea teal)$/i,
+    earthy: /^(cocoa brown|olive & pink|rust|sand|sage green|pale sage|sea teal|chartreuse)$/i
+  };
+
   function finderMatchPool() {
-    const { silhouette } = finderAnswers;
-    if (silhouette === 'three') return products.filter(product => product.pieces === 3);
-    if (silhouette === 'set') return products.filter(product => product.pieces === 2 && product.productType === 'set');
-    if (silhouette === 'kurti') return products.filter(product => product.pieces === 1 && product.productType === 'kurti');
-    return products.slice();
+    const { silhouette, mood } = finderAnswers;
+    return products.filter(product => {
+      const shapeMatches = silhouette === 'three' ? product.pieces === 3
+        : silhouette === 'set' ? product.pieces === 2 && product.productType === 'set'
+        : silhouette === 'kurti' ? product.pieces === 1 && product.productType === 'kurti' : true;
+      return shapeMatches && (!finderMoodColours[mood] || finderMoodColours[mood].test(product.color || ''));
+    });
   }
 
   function finderScore(product) {
-    const text = `${product.name} ${product.description} ${product.detail} ${product.setContents} ${product.color}`.toLowerCase();
-    const category = product.category;
-    let score = 0;
-    const { occasion, mood, silhouette } = finderAnswers;
-    if (occasion === 'everyday') score += category === 'Kurtas' || /everyday|easy|simple|short kurti/.test(text) ? 5 : 1;
-    if (occasion === 'occasion') score += /three-piece|dupatta|embellish|gold|paisley|floral/.test(text) ? 5 : 1;
-    if (occasion === 'complete') score += product.pieces >= 2 ? 6 : 0;
-    if (occasion === 'simple') score += product.pieces === 1 ? 6 : category === 'Co-ord sets' ? 2 : 1;
-    if (mood === 'soft') score += /white|ivory|pink|blush|light|gentle/.test(text) ? 6 : 0;
-    if (mood === 'bright') score += /orange|pink|yellow|bright|fuchsia|colour/.test(text) ? 6 : 0;
-    if (mood === 'deep') score += /navy|purple|plum|wine|deep|dark|jewel/.test(text) ? 6 : 0;
-    if (mood === 'earthy') score += /olive|green|botanical|natural|earth/.test(text) ? 6 : 0;
-    if (silhouette === 'set') score += product.pieces === 2 && product.productType === 'set' ? 12 : 0;
-    if (silhouette === 'three') score += product.pieces === 3 ? 12 : 0;
-    if (silhouette === 'kurti') score += product.pieces === 1 && product.productType === 'kurti' ? 12 : 0;
-    if (silhouette === 'any') score += 1;
-    return score;
+    // Occasion is a styling preference; colour and set type remain required.
+    const { occasion } = finderAnswers;
+    if (occasion === 'everyday' || occasion === 'simple') return product.pieces === 2 ? 2 : 1;
+    if (occasion === 'occasion' || occasion === 'complete') return product.pieces === 3 ? 2 : 1;
+    return 0;
   }
 
   function finderResults() {
@@ -375,10 +373,11 @@
 
   function renderFinderResults() {
     const ranked = finderResults();
+    if (!ranked.length) return `<div class="finder-results"><h3>No matching styles yet.</h3><p>There are no current styles in that colour mood and set type. Try another choice, or ask us on WhatsApp.</p><button class="text-link" type="button" data-finder-restart>Try other choices</button></div>`;
     return `<div class="finder-results">
-      <div class="finder-result-intro"><p class="finder-eyebrow">YOUR EDIT IS READY</p><h3>Made for your <em>moment.</em></h3><p>Up to four styles from the current catalogue, matched to your choices. Your selected shape is always respected. Nothing is booked or ordered here — just a starting point.</p></div>
-      <div class="finder-result-grid">${ranked.map((product,index) => `<button class="finder-result-card" type="button" data-product="${escape(product.id)}"><span class="finder-result-image"><img src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="500" height="670" loading="lazy" decoding="async"><span>${String(index+1).padStart(2,'0')}</span></span><span class="finder-result-copy"><strong>${escape(product.cardName || product.name)}</strong><small>${escape(product.color)}</small></span></button>`).join('')}</div>
-      <div class="finder-result-actions"><button class="button button-rust" type="button" data-finder-browse>See your four matches <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button><button class="text-link" type="button" data-finder-restart>Start again</button></div>
+      <div class="finder-result-intro"><p class="finder-eyebrow">YOUR EDIT IS READY</p><h3>Made for your <em>moment.</em></h3><p>${ranked.length} ${ranked.length === 1 ? 'style matches' : 'styles match'} your colour mood and set type. Occasion is a styling suggestion. Please confirm sizes and availability with us.</p></div>
+      <div class="finder-result-grid">${ranked.map((product,index) => `<button class="finder-result-card" type="button" data-product="${escape(product.id)}"><span class="finder-result-image"><img src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="500" height="670" loading="lazy" decoding="async"><span>${String(index+1).padStart(2,'0')}</span></span><span class="finder-result-copy"><strong>${escape(product.cardName || product.name)}</strong><small>${escape(product.color)} &middot; ${escape(product.setContents || product.detail)}</small></span></button>`).join('')}</div>
+      <div class="finder-result-actions"><button class="button button-rust" type="button" data-finder-browse>See ${ranked.length === 1 ? 'your match' : `your ${ranked.length} matches`} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button><button class="text-link" type="button" data-finder-restart>Start again</button></div>
     </div>`;
   }
 
@@ -448,6 +447,7 @@
     if (activeEdit && editDefinitions[activeEdit]) {
       return products.filter(editDefinitions[activeEdit].matches);
     }
+    if (window.__sutrasFinderMatches) return window.__sutrasFinderMatches.map(id => byId.get(id)).filter(Boolean);
     return products.filter(product => activeFilter === 'All' || product.category === activeFilter);
   }
 

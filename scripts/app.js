@@ -346,36 +346,36 @@
   };
 
   function finderMatchPool() {
-    const { silhouette, mood } = finderAnswers;
+    const { silhouette } = finderAnswers;
     return products.filter(product => {
       const shapeMatches = silhouette === 'three' ? product.pieces === 3
         : silhouette === 'set' ? product.pieces === 2 && product.productType === 'set'
         : silhouette === 'kurti' ? product.pieces === 1 && product.productType === 'kurti' : true;
-      return shapeMatches && (!finderMoodColours[mood] || finderMoodColours[mood].test(product.color || ''));
+      return shapeMatches;
     });
   }
 
   function finderScore(product) {
-    // Occasion is a styling preference; colour and set type remain required.
-    const { occasion } = finderAnswers;
-    if (occasion === 'everyday' || occasion === 'simple') return product.pieces === 2 ? 2 : 1;
-    if (occasion === 'occasion' || occasion === 'complete') return product.pieces === 3 ? 2 : 1;
-    return 0;
+    // Keep every set of the chosen type; preferences only affect the order.
+    const { occasion, mood } = finderAnswers;
+    let score = finderMoodColours[mood]?.test(product.color || '') ? 10 : 0;
+    if (occasion === 'everyday' || occasion === 'simple') score += product.pieces === 2 ? 2 : 1;
+    if (occasion === 'occasion' || occasion === 'complete') score += product.pieces === 3 ? 2 : 1;
+    return score;
   }
 
   function finderResults() {
     const pool = finderMatchPool();
     return pool.map((product, index) => ({ product, score: finderScore(product), index }))
       .sort((a,b) => b.score - a.score || a.index - b.index)
-      .slice(0, 4)
       .map(item => item.product);
   }
 
   function renderFinderResults() {
     const ranked = finderResults();
-    if (!ranked.length) return `<div class="finder-results"><h3>No matching styles yet.</h3><p>There are no current styles in that colour mood and set type. Try another choice, or ask us on WhatsApp.</p><button class="text-link" type="button" data-finder-restart>Try other choices</button></div>`;
+    if (!ranked.length) return `<div class="finder-results"><h3>No matching styles yet.</h3><p>There are no current styles of that set type. Try another choice, or ask us on WhatsApp.</p><button class="text-link" type="button" data-finder-restart>Try other choices</button></div>`;
     return `<div class="finder-results">
-      <div class="finder-result-intro"><p class="finder-eyebrow">YOUR EDIT IS READY</p><h3>Made for your <em>moment.</em></h3><p>${ranked.length} ${ranked.length === 1 ? 'style matches' : 'styles match'} your colour mood and set type. Occasion is a styling suggestion. Please confirm sizes and availability with us.</p></div>
+      <div class="finder-result-intro"><p class="finder-eyebrow">YOUR EDIT IS READY</p><h3>Made for your <em>moment.</em></h3><p>All ${ranked.length} ${finderAnswers.silhouette === 'three' ? 'three-piece sets' : finderAnswers.silhouette === 'set' ? 'two-piece sets' : 'styles'}, with your preferred colours first. Colour and occasion affect the order, not which styles you see. Please confirm sizes and availability with us.</p></div>
       <div class="finder-result-grid">${ranked.map((product,index) => `<button class="finder-result-card" type="button" data-product="${escape(product.id)}"><span class="finder-result-image"><img src="${escape(window.SutrasSecurity.imageURL(product.image))}" alt="${escape(product.imageAlt)}" width="500" height="670" loading="lazy" decoding="async"><span>${String(index+1).padStart(2,'0')}</span></span><span class="finder-result-copy"><strong>${escape(product.cardName || product.name)}</strong><small>${escape(product.color)} &middot; ${escape(product.setContents || product.detail)}</small></span></button>`).join('')}</div>
       <div class="finder-result-actions"><button class="button button-rust" type="button" data-finder-browse>See ${ranked.length === 1 ? 'your match' : `your ${ranked.length} matches`} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button><button class="text-link" type="button" data-finder-restart>Start again</button></div>
     </div>`;

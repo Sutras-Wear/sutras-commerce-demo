@@ -424,29 +424,29 @@
     }, 180);
   }
 
+  // Match the current catalogue rather than retired product IDs.
   const editDefinitions = {
     everyday: {
       label: 'Everyday ease',
-      ids: ['green-two-piece-set', 'white-floral-two-piece-set', 'yellow-floral-kurti', 'olive-lattice-short-kurti', 'slate-grey-short-kurti', 'wine-floral-short-kurti']
+      matches: product => product.pieces === 2
     },
     'three-piece': {
       label: 'Three-piece moments',
-      ids: ['orange-three-piece-set', 'pink-three-piece-set', 'dark-purple-three-piece-set', 'plum-purple-three-piece-set']
+      matches: product => product.pieces === 3
     },
     colour: {
       label: 'Colour stories',
-      ids: ['orange-three-piece-set', 'pink-three-piece-set', 'green-two-piece-set', 'yellow-floral-kurti', 'dark-purple-three-piece-set', 'plum-purple-three-piece-set', 'wine-floral-short-kurti', 'dark-green-floral-two-piece-set']
+      matches: product => /red|navy|aqua|blue|olive|teal|rust|green|sage|pink|lilac|orange|tangerine|coral|yellow|lavender|multicolour|chartreuse/i.test(product.color || '')
     },
     soft: {
       label: 'Soft & light',
-      ids: ['white-floral-two-piece-set', 'pink-three-piece-set', 'yellow-floral-kurti', 'slate-grey-short-kurti']
+      matches: product => /sand|peach|ivory|sage|rose|lilac|lavender|sky blue/i.test(product.color || '')
     }
   };
 
   function visibleProducts() {
     if (activeEdit && editDefinitions[activeEdit]) {
-      const ids = new Set(editDefinitions[activeEdit].ids);
-      return products.filter(product => ids.has(product.id));
+      return products.filter(editDefinitions[activeEdit].matches);
     }
     return products.filter(product => activeFilter === 'All' || product.category === activeFilter);
   }

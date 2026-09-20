@@ -1,4 +1,4 @@
-/* Real catalogue: owner-confirmed prices; sizes and stock await confirmation. */
+/* Owner-confirmed catalogue prices; AI styling is labelled; sizes and stock await confirmation. */
 window.SUTRAS = {
   "name": "Sutras by S³",
   "instagram": "https://www.instagram.com/sutras.official/",
@@ -16,43 +16,50 @@ window.SUTRAS = {
       "category": "Kurta sets",
       "color": "Black & red",
       "colorHex": "#252023",
-      "image": "assets/images/real-catalogue/real-black-red-medallion-two-piece-kurta-set/01.webp",
-      "imageKind": "store-photo",
-      "imageAlt": "Black & Red Medallion Two-Piece Kurta Set photographed by Sutras.",
+      "image": "assets/images/ai-catalogue/real-black-red-medallion-two-piece-kurta-set/01-front-courtyard.webp",
+      "imageKind": "ai-model",
+      "imageAlt": "Black & Red Medallion Two-Piece Kurta Set - front model view, AI styling illustration.",
       "description": "A black kurta with a brick-red medallion panel and contrasting patterned borders, paired with plain black trousers.",
       "detail": "Kurta and trousers",
       "setContents": "Kurta and trousers",
       "pieces": 2,
       "productType": "set",
-      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "photoNote": "AI-generated model and detail images based on our garment photos. Fine details and fit may vary; ask Sutras for original photos and confirm sizes and stock on WhatsApp.",
       "gallery": [
         {
-          "src": "assets/images/real-catalogue/real-black-red-medallion-two-piece-kurta-set/02.webp",
-          "alt": "Black & Red Medallion Two-Piece Kurta Set ? garment view 2.",
-          "label": "Garment view 2",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-black-red-medallion-two-piece-kurta-set/02-three-quarter.webp",
+          "alt": "Black & Red Medallion Two-Piece Kurta Set - angled model view, AI styling illustration.",
+          "label": "Angled model view",
+          "kind": "ai-model",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-black-red-medallion-two-piece-kurta-set/03.webp",
-          "alt": "Black & Red Medallion Two-Piece Kurta Set ? garment view 3.",
-          "label": "Garment view 3",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-black-red-medallion-two-piece-kurta-set/03-neckline.webp",
+          "alt": "Black & Red Medallion Two-Piece Kurta Set - neckline detail, AI styling illustration.",
+          "label": "Neckline detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-black-red-medallion-two-piece-kurta-set/04.webp",
-          "alt": "Black & Red Medallion Two-Piece Kurta Set ? garment view 4.",
-          "label": "Garment view 4",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-black-red-medallion-two-piece-kurta-set/04-sleeve-cuff.webp",
+          "alt": "Black & Red Medallion Two-Piece Kurta Set - sleeve cuff detail, AI styling illustration.",
+          "label": "Sleeve cuff detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-black-red-medallion-two-piece-kurta-set/05.webp",
-          "alt": "Black & Red Medallion Two-Piece Kurta Set ? garment view 5.",
-          "label": "Garment view 5",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-black-red-medallion-two-piece-kurta-set/05-pattern-hem.webp",
+          "alt": "Black & Red Medallion Two-Piece Kurta Set - pattern and hem detail, AI styling illustration.",
+          "label": "Pattern and hem detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
+        },
+        {
+          "src": "assets/images/ai-catalogue/real-black-red-medallion-two-piece-kurta-set/06-trousers.webp",
+          "alt": "Black & Red Medallion Two-Piece Kurta Set - trousers detail, AI styling illustration.",
+          "label": "Trousers detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         }
       ],
       "price": 750,
@@ -68,43 +75,50 @@ window.SUTRAS = {
       "category": "Kurta sets",
       "color": "Navy & red",
       "colorHex": "#243047",
-      "image": "assets/images/real-catalogue/real-navy-red-motif-two-piece-kurta-set/01.webp",
-      "imageKind": "store-photo",
-      "imageAlt": "Navy & Red Motif Two-Piece Kurta Set photographed by Sutras.",
+      "image": "assets/images/ai-catalogue/real-navy-red-motif-two-piece-kurta-set/01-front.webp",
+      "imageKind": "ai-model",
+      "imageAlt": "Navy & Red Motif Two-Piece Kurta Set - front model view, AI styling illustration.",
       "description": "A navy kurta with red motifs, patterned vertical panels and a tassel neckline, paired with red trousers.",
       "detail": "Kurta and trousers",
       "setContents": "Kurta and trousers",
       "pieces": 2,
       "productType": "set",
-      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "photoNote": "AI-generated model and detail images based on our garment photos. Fine details and fit may vary; ask Sutras for original photos and confirm sizes and stock on WhatsApp.",
       "gallery": [
         {
-          "src": "assets/images/real-catalogue/real-navy-red-motif-two-piece-kurta-set/02.webp",
-          "alt": "Navy & Red Motif Two-Piece Kurta Set ? garment view 2.",
-          "label": "Garment view 2",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-navy-red-motif-two-piece-kurta-set/02-angle.webp",
+          "alt": "Navy & Red Motif Two-Piece Kurta Set - angled model view, AI styling illustration.",
+          "label": "Angled model view",
+          "kind": "ai-model",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-navy-red-motif-two-piece-kurta-set/03.webp",
-          "alt": "Navy & Red Motif Two-Piece Kurta Set ? garment view 3.",
-          "label": "Garment view 3",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-navy-red-motif-two-piece-kurta-set/03-neckline.webp",
+          "alt": "Navy & Red Motif Two-Piece Kurta Set - neckline detail, AI styling illustration.",
+          "label": "Neckline detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-navy-red-motif-two-piece-kurta-set/04.webp",
-          "alt": "Navy & Red Motif Two-Piece Kurta Set ? garment view 4.",
-          "label": "Garment view 4",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-navy-red-motif-two-piece-kurta-set/04-cuff.webp",
+          "alt": "Navy & Red Motif Two-Piece Kurta Set - sleeve cuff detail, AI styling illustration.",
+          "label": "Sleeve cuff detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-navy-red-motif-two-piece-kurta-set/05.webp",
-          "alt": "Navy & Red Motif Two-Piece Kurta Set ? garment view 5.",
-          "label": "Garment view 5",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-navy-red-motif-two-piece-kurta-set/05-pattern-hem.webp",
+          "alt": "Navy & Red Motif Two-Piece Kurta Set - pattern and hem detail, AI styling illustration.",
+          "label": "Pattern and hem detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
+        },
+        {
+          "src": "assets/images/ai-catalogue/real-navy-red-motif-two-piece-kurta-set/06-trousers.webp",
+          "alt": "Navy & Red Motif Two-Piece Kurta Set - trousers detail, AI styling illustration.",
+          "label": "Trousers detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         }
       ],
       "price": 750,
@@ -120,43 +134,50 @@ window.SUTRAS = {
       "category": "Kurta sets",
       "color": "Aqua",
       "colorHex": "#61b9c1",
-      "image": "assets/images/real-catalogue/real-aqua-floral-detail-two-piece-kurta-set/01.webp",
-      "imageKind": "store-photo",
-      "imageAlt": "Aqua Floral-Detail Two-Piece Kurta Set photographed by Sutras.",
+      "image": "assets/images/ai-catalogue/real-aqua-floral-detail-two-piece-kurta-set/01-front.webp",
+      "imageKind": "ai-model",
+      "imageAlt": "Aqua Floral-Detail Two-Piece Kurta Set - front model view, AI styling illustration.",
       "description": "An aqua gathered kurta with pale floral detailing at the chest and cuffs, paired with matching trousers.",
       "detail": "Kurta and trousers",
       "setContents": "Kurta and trousers",
       "pieces": 2,
       "productType": "set",
-      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "photoNote": "AI-generated model and detail images based on our garment photos. Fine details and fit may vary; ask Sutras for original photos and confirm sizes and stock on WhatsApp.",
       "gallery": [
         {
-          "src": "assets/images/real-catalogue/real-aqua-floral-detail-two-piece-kurta-set/02.webp",
-          "alt": "Aqua Floral-Detail Two-Piece Kurta Set ? garment view 2.",
-          "label": "Garment view 2",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-aqua-floral-detail-two-piece-kurta-set/02-angle.webp",
+          "alt": "Aqua Floral-Detail Two-Piece Kurta Set - angled model view, AI styling illustration.",
+          "label": "Angled model view",
+          "kind": "ai-model",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-aqua-floral-detail-two-piece-kurta-set/03.webp",
-          "alt": "Aqua Floral-Detail Two-Piece Kurta Set ? garment view 3.",
-          "label": "Garment view 3",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-aqua-floral-detail-two-piece-kurta-set/03-neckline.webp",
+          "alt": "Aqua Floral-Detail Two-Piece Kurta Set - neckline detail, AI styling illustration.",
+          "label": "Neckline detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-aqua-floral-detail-two-piece-kurta-set/04.webp",
-          "alt": "Aqua Floral-Detail Two-Piece Kurta Set ? garment view 4.",
-          "label": "Garment view 4",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-aqua-floral-detail-two-piece-kurta-set/04-cuff.webp",
+          "alt": "Aqua Floral-Detail Two-Piece Kurta Set - sleeve cuff detail, AI styling illustration.",
+          "label": "Sleeve cuff detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-aqua-floral-detail-two-piece-kurta-set/05.webp",
-          "alt": "Aqua Floral-Detail Two-Piece Kurta Set ? garment view 5.",
-          "label": "Garment view 5",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-aqua-floral-detail-two-piece-kurta-set/05-pattern-hem.webp",
+          "alt": "Aqua Floral-Detail Two-Piece Kurta Set - pattern and hem detail, AI styling illustration.",
+          "label": "Pattern and hem detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
+        },
+        {
+          "src": "assets/images/ai-catalogue/real-aqua-floral-detail-two-piece-kurta-set/06-trousers.webp",
+          "alt": "Aqua Floral-Detail Two-Piece Kurta Set - trousers detail, AI styling illustration.",
+          "label": "Trousers detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         }
       ],
       "price": 750,
@@ -172,43 +193,50 @@ window.SUTRAS = {
       "category": "Kurta sets",
       "color": "Cocoa brown",
       "colorHex": "#85624c",
-      "image": "assets/images/real-catalogue/real-cocoa-floral-three-piece-kurta-set/01.webp",
-      "imageKind": "store-photo",
-      "imageAlt": "Cocoa Floral Three-Piece Kurta Set photographed by Sutras.",
+      "image": "assets/images/ai-catalogue/real-cocoa-floral-three-piece-kurta-set/01-front.webp",
+      "imageKind": "ai-model",
+      "imageAlt": "Cocoa Floral Three-Piece Kurta Set - front model view, AI styling illustration.",
       "description": "A cocoa-brown kurta with colourful floral medallions and a tassel neckline, paired with brown trousers and a floral scarf.",
       "detail": "Kurta, trousers and scarf (dupatta)",
       "setContents": "Kurta, trousers and scarf (dupatta)",
       "pieces": 3,
       "productType": "set",
-      "photoNote": "Actual garment photographs. Please confirm available sizes and current stock with Sutras on WhatsApp.",
+      "photoNote": "AI-generated model and detail images based on our garment photos. Fine details and fit may vary; ask Sutras for original photos and confirm sizes and stock on WhatsApp.",
       "gallery": [
         {
-          "src": "assets/images/real-catalogue/real-cocoa-floral-three-piece-kurta-set/02.webp",
-          "alt": "Cocoa Floral Three-Piece Kurta Set ? garment view 2.",
-          "label": "Garment view 2",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-cocoa-floral-three-piece-kurta-set/02-angle.webp",
+          "alt": "Cocoa Floral Three-Piece Kurta Set - angled model view, AI styling illustration.",
+          "label": "Angled model view",
+          "kind": "ai-model",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-cocoa-floral-three-piece-kurta-set/03.webp",
-          "alt": "Cocoa Floral Three-Piece Kurta Set ? garment view 3.",
-          "label": "Garment view 3",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-cocoa-floral-three-piece-kurta-set/03-neckline.webp",
+          "alt": "Cocoa Floral Three-Piece Kurta Set - neckline detail, AI styling illustration.",
+          "label": "Neckline detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-cocoa-floral-three-piece-kurta-set/04.webp",
-          "alt": "Cocoa Floral Three-Piece Kurta Set ? garment view 4.",
-          "label": "Garment view 4",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-cocoa-floral-three-piece-kurta-set/04-cuff.webp",
+          "alt": "Cocoa Floral Three-Piece Kurta Set - sleeve cuff detail, AI styling illustration.",
+          "label": "Sleeve cuff detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         },
         {
-          "src": "assets/images/real-catalogue/real-cocoa-floral-three-piece-kurta-set/05.webp",
-          "alt": "Cocoa Floral Three-Piece Kurta Set ? garment view 5.",
-          "label": "Garment view 5",
-          "kind": "store-photo",
-          "caption": "Actual garment photograph supplied by Sutras."
+          "src": "assets/images/ai-catalogue/real-cocoa-floral-three-piece-kurta-set/05-pattern-hem.webp",
+          "alt": "Cocoa Floral Three-Piece Kurta Set - pattern and hem detail, AI styling illustration.",
+          "label": "Pattern and hem detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
+        },
+        {
+          "src": "assets/images/ai-catalogue/real-cocoa-floral-three-piece-kurta-set/06-trousers.webp",
+          "alt": "Cocoa Floral Three-Piece Kurta Set - trousers detail, AI styling illustration.",
+          "label": "Trousers detail",
+          "kind": "ai-detail",
+          "caption": "AI-generated styling based on the supplied garment photographs; fine details may vary."
         }
       ],
       "price": 850,

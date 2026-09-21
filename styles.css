@@ -757,3 +757,8 @@ body{background:var(--paper);text-rendering:optimizeLegibility}
 @media(max-width:380px){
   .bag-scroll-content{padding-inline:14px}
 }
+
+/* Four visible edit cards in a balanced tablet grid. */
+@media(min-width:521px) and (max-width:900px){
+  .edits-grid .edit-card-large{grid-row:auto}
+}
